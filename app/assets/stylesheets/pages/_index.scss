@@ -1,0 +1,33 @@
+// Import page-specific CSS files here.
+@import "home";
+
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 30px;
+
+}
+
+.card img {
+  height: 300px;
+  width:100%;
+  border-radius: 5px;
+}
+
+.card {
+  padding: 10px;
+  margin: 10px;
+}
+
+.slider{
+
+  height: 550px;
+  width: 1700px;
+}
+
+.carousel-item{
+  height: 100%;
+  width: 100%;
+}
+

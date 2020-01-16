@@ -1,0 +1,128 @@
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
+// External libraries
+@import "bootstrap/scss/bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// Your CSS partials
+@import "components/index";
+@import "pages/index";
+
+
+.pagination a, .pagination span.current, .pagination span.gap {
+    float: left;
+    padding: 0 14px;
+    line-height: 38px;
+    text-decoration: none;
+    background-color: white;
+    border: 1px solid #DDD;
+    border-left-width: 0;
+}
+
+// les 12 lignes ci dessous, servent simplement a fixer le footer en bas de page :-)
+html, body {
+  height: 100%;
+  margin: 0; padding: 0;
+}
+body {
+  display : table;
+  width: 100%;
+}
+.foot {
+  display : table-row;
+  height: 35px; /* à titre d'exemple */
+}
+
+li {
+  list-style-type: none;
+}
+
+.bloc-photo {
+
+  margin-left: -30px;
+  height: 500px;
+  padding-bottom: 10px;
+}
+
+
+.bloc-1 {
+  border: 5px, solid, black;
+}
+
+.bloc-1 img {
+  height: 25px;
+}
+
+
+.bloc-2 img {
+  height: 25px;
+}
+
+
+.bloc-photo img {
+  height: 100%;
+  width: 100%;
+}
+
+.description {
+padding-top: 30px;
+}
+
+
+.bloc-picto-2 img {
+  height: 30px;
+}
+
+
+.product-card h1 {
+  margin-top: -300px;
+  margin-left: 50px;
+  color: white;
+  font-size: 100px;
+}
+
+.row {
+  width:100%;
+  margin: 0px;
+}
+
+.yield {
+  margin-top: 150px;
+}
+.pagination {
+    border-left: 1px solid #ddd;
+    .first{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .prev {
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .page{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .next{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .last{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+}
+
+.pictos{
+  justify-content: space-between;
+}
+

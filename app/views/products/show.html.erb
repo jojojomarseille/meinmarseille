@@ -1,0 +1,186 @@
+<div class="container">
+
+
+
+  <div class="row">
+    <div class="product-card col-sm-12">
+      <div class=" bloc-photo col-sm-12 ">
+        <%= image_tag "panier.jpeg" %>
+        <h1> <%=@product.title%></h1>
+      </div>
+
+      <div class="row pictos">
+
+          <p class=" bloc-1 col-sm-4"> <%= image_tag "clock-circular-outline.png"%> Durée: 2h </p>
+          <P class=" bloc-2 col-sm-4"> <%= image_tag "user.png"%>Nombre de participants: 5 </P>
+          <p class="bloc-3 col-sm-4"> Prix: 50€/ personne</p>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row description">
+    <div class="col-sm-6">
+      <h2> Decouvrez le plus vieux quartier de Marseille </h2>
+
+      <P> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</P>
+    </div>
+
+    <div class="bloc-picto-2 col-sm-6">
+      <li>
+        <ul> <%= image_tag "expert-route.png"%> Dificutée: intermediaire </ul>
+        <ul> <%= image_tag "multiple-users-silhouette.png"%> Participants max : 10 personnes </ul>
+        <ul> <%= image_tag "smiling-baby.png"%> Enfants: oui </ul>
+      </li>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Reserver
+    </button>
+    </div>
+
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">envoyer une demande de reservation</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <%= form_for(@reservation) do |f| %>
+
+                  <div class="form-group">
+                  <label> Date </label>
+                  <%= f.date_field :date_reservation, class: 'form-control' %>
+                  </div>
+
+                  <div class="form-group">
+                  <label> Nombre de participants</label>
+                  <%= f.number_field :nombre_participants, class: 'form-control' %>
+                  </div>
+
+
+
+              <% end %>
+            </div>
+            <div class="modal-footer">
+              <div class="form-group">
+                  <button type="submit" class="btn btn-primary"> Soumettre </button>
+                  </div>
+            </div>
+        </div>
+      </div>
+      </div>
+     </div>
+
+
+  </div>
+
+  <div class="row formulaire">
+    <div class="col-sm-12">
+      <!--Section: Contact v.2-->
+<section class="mb-4">
+
+    <!--Section heading-->
+    <h2 class="h1-responsive font-weight-bold text-center my-4">Contactez-nous</h2>
+    <!--Section description-->
+    <p class="text-center w-responsive mx-auto mb-5">Si vous avez la moindre question,n'hesitez pas a nous contacter directement. Notre equipe reviendra vers vous aussi vite que possible</p>
+
+    <div class="row">
+
+        <!--Grid column-->
+        <div class="col-md-9 mb-md-0 mb-5">
+            <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="name" name="name" class="form-control">
+                            <label for="name" class="">Nom</label>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="email" name="email" class="form-control">
+                            <label for="email" class="">Mail</label>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+                            <input type="text" id="subject" name="subject" class="form-control">
+                            <label for="subject" class="">Objet</label>
+                        </div>
+                    </div>
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-12">
+
+                        <div class="md-form">
+                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                            <label for="message">Message</label>
+                        </div>
+
+                    </div>
+                </div>
+                <!--Grid row-->
+
+            </form>
+
+            <div class="text-center text-md-left">
+                <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
+            </div>
+            <div class="status"></div>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-3 text-center">
+            <ul class="list-unstyled mb-0">
+                <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                    <p>Marseille, 13001, France</p>
+                </li>
+
+                <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                    <p>+33 01 01 01 01 01</p>
+                </li>
+
+                <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                    <p>test@test.com</p>
+                </li>
+            </ul>
+        </div>
+        <!--Grid column-->
+
+    </div>
+
+</section>
+<!--Section: Contact v.2-->
+    </div>
+
+  </div>
+
+
+
+</div>

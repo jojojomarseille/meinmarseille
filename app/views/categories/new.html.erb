@@ -1,0 +1,28 @@
+<h1>Creer une nouvelle categorie</h1>
+
+
+
+
+<%= form_for @categorie do |f| %>
+<div class="form-group">
+
+<label> Nom de la categorie </label>
+<%= f.text_field :name, class: 'form-control' %>
+
+</div>
+
+<div class="form-group">
+
+<label> description de la categorie </label>
+<%= f.text_area :description, class: 'form-control' %>
+
+</div>
+
+<div class="form-group">
+
+<button type="submit" class="btn btn-primary"> creer </button>
+
+
+</div>
+
+<% end %>
