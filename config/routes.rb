@@ -38,6 +38,7 @@ Rails.application.routes.draw do
   resources :categories
 
   resources :reservations
+  resources :bookings
 
   resources :orders, only: [:show, :create] do
     resources :payments, only: :new

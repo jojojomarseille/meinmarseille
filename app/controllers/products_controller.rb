@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @reservation = Reservation.new
+    @booking = Booking.new
     @product = Product.find(params[:id])
     @products =Product.categorie_id(@product.categorie.id).page(params[:page]).per(4)
 

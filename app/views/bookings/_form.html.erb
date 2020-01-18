@@ -1,0 +1,6 @@
+<%= form_tag "/bookings", method: "post" do %>
+  <input type="string" name="comment" />
+  <input type="integer" name="participants" />
+
+  <input type="submit" value="Ajouter la reservation" />
+<% end %>

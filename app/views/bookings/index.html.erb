@@ -1,0 +1,26 @@
+<h1>Booking#index</h1>
+
+<div class="cards">
+    <%= paginate @bookings %>
+    <% @bookings.each do |booking| %>
+    <div class="card" style="width: 18rem;">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= booking.id%></h5>
+        <p class="partiipants"><%= booking.participants%></p>
+        <p class="partiipants"><%= booking.comment%></p>
+        <p> <a href="/bookings/new" class="btn btn-primary"> supprimer</a> </P>
+
+          <%= form_tag "/bookings/#{booking.id}", method: "delete" do %>
+          <input type="submit" value="Supprimer le booking" />
+          <% end %>
+
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
+<p> <a href="/bookings/new" class="btn btn-primary"> Creer une nouvelle booking</a> </P>
+
