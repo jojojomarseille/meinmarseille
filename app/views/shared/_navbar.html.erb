@@ -50,6 +50,8 @@
           <%= image_tag "sailor.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "creer un produit", "products/new", class: "dropdown-item" %>
+
+            <%= link_to "mes bookings", booking_by_user_path, class: "dropdown-item" %>
             <%= link_to "Another action", "#", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>

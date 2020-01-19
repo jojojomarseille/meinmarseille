@@ -37,8 +37,10 @@ Rails.application.routes.draw do
 
   resources :categories
 
-  resources :reservations
+
   resources :bookings
+
+  get 'booking_by_user' => 'bookings#booking_by_users'
 
   resources :orders, only: [:show, :create] do
     resources :payments, only: :new

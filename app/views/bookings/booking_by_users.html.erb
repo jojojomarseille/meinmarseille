@@ -1,19 +1,17 @@
-<h1>Booking#index</h1>
+<h1>Booking by users#index</h1>
 
+<div class="cards">
 
-  <% @bookings.each do |booking| %>
-    <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-
-      <div class="card-product-infos">
-        <h2>Booking no <%= booking.id%> </h2>
+    <% @booking_by_user.each do |booking| %>
+    <div class="card" style="width: 18rem;">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= booking.id%></h5>
         <p> participants: <%= booking.participants%></p>
         <p> comment: <%= booking.comment%></p>
-        <p> user: <%= booking.user_id%></p>
-        <p> status: <%= booking.status%></p>
-      </div>
 
-      <div class="card-product-infos2">
+        <p> status: <%= booking.status%></p>
+
         <%#
         ci dessous on vas faire un systéme qui convertis le code status (qui est un integer) en un status comprehensible par l'homme
         ce sera: en attente pour un status = 0, accepté pour un status = 1 et refusé pour un status = 2.
@@ -36,15 +34,15 @@
           <%= form_tag "/bookings/#{booking.id}", method: "delete" do %>
           <input type="submit" class="btn btn-primary" value="Supprimer le booking" />
           <% end %>
+
         <% else%>
         <% end%>
 
       </div>
-
     </div>
-  <% end %>
-
+    <% end %>
+  </div>
+</div>
 
 
 <p> <a href="/bookings/new" class="btn btn-primary"> Creer une nouvelle booking</a> </P>
-
