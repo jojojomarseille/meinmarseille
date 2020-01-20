@@ -2,7 +2,7 @@ class Product < ActiveRecord::Base
   belongs_to :categorie
   belongs_to :zone
   has_many :line_items, dependent: :nullify
-  has_many :reservations
+  has_many :bookings
   monetize :price_cents
 
   mount_uploader :photo, PhotoUploader #cela definie, je ne sait pas comment qu'il y a un photo uploader pour ce model

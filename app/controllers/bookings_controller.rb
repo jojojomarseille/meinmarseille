@@ -19,7 +19,7 @@ def booking_by_users
 end
 
 def create
-    Booking.create comment: params[:comment], participants: params[:participants], status: params[:status], user: current_user
+    Booking.create comment: params[:comment], participants: params[:participants], status: params[:status], date: params[:date], user: current_user
     redirect_to "/bookings"
 end
 
