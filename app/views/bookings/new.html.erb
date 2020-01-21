@@ -2,4 +2,13 @@
 <p>ici je peux creer un Booking</p>
 
 
-<%= render "bookings/form" %>
+<%= simple_form_for [@product, @booking] do |f| %>
+  <%= f.input :comment %>
+  <%= f.input :participants%>
+  <%= f.input :status %>
+  <%= f.input :date %>
+
+
+
+  <%= f.submit "book!", class: "btn btn-primary" %>
+<% end %>

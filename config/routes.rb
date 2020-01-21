@@ -7,7 +7,12 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'products#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :products
+  resources :products do
+    resources :bookings, only: [ :new, :create, :index, :destroy, :update ]
+  end
+
+#le nesting ci dessous est un essaie, si ca ne fonctionnepas, on l'enlevera
+
   #get 'products/new' => 'products#new'
   #post 'products/new' => 'products#create'
 
@@ -38,7 +43,8 @@ Rails.application.routes.draw do
   resources :categories
 
 
-  resources :bookings
+  #resources :bookings
+
 
   get 'booking_by_user' => 'bookings#booking_by_users'
 

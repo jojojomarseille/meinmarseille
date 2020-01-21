@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_20_170446) do
+ActiveRecord::Schema.define(version: 2020_01_20_174755) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 2020_01_20_170446) do
     t.integer "status", default: 0, null: false
     t.integer "user_id"
     t.date "date"
+    t.bigint "product_id", null: false
+    t.index ["product_id"], name: "index_bookings_on_product_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
@@ -124,6 +126,7 @@ ActiveRecord::Schema.define(version: 2020_01_20_170446) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "bookings", "products"
   add_foreign_key "line_items", "carts"
   add_foreign_key "line_items", "products"
   add_foreign_key "orders", "carts"

@@ -1,8 +1,10 @@
-<%= form_tag "/bookings", method: "post" do %>
+<%= form_tag "/products/#{@product.id}/bookings", method: "post" do %>
   <input type="string" name="comment" placeholder="commentaire"/>
   <input type="integer" name="participants" placeholder="nbr de participants" />
   <input type="status" name="status" value= "0" />
   <input type="date" name="date" />
+  <input type="integer" name="product_id" value="<%=@product.id%>" />
+
 
 
 

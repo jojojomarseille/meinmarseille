@@ -6,7 +6,7 @@
     <div class="product-card col-sm-12">
       <div class=" bloc-photo col-sm-12 ">
         <%= image_tag "panier.jpeg" %>
-        <h1> <%=@product.title%></h1>
+        <h1> <%=@product.title%><%=@product.id%></h1>
       </div>
 
       <div class="row pictos">
@@ -52,7 +52,6 @@
             <div class="modal-body">
 
               <%= render "bookings/form" %>
-
             </div>
             <div class="modal-footer">
 

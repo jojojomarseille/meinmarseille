@@ -11,6 +11,7 @@
         <p> comment: <%= booking.comment%></p>
         <p> user: <%= booking.user_id%></p>
         <p> status: <%= booking.status%></p>
+
       </div>
 
       <div class="card-product-infos2">
@@ -38,13 +39,11 @@
           <% end %>
         <% else%>
         <% end%>
-
+        <p> product: <%= booking.product_id%></p>
       </div>
 
     </div>
   <% end %>
 
 
-
-<p> <a href="/bookings/new" class="btn btn-primary"> Creer une nouvelle booking</a> </P>
 
