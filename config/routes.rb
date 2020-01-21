@@ -8,8 +8,12 @@ Rails.application.routes.draw do
   root to: 'products#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :products do
-    resources :bookings, only: [ :new, :create, :index, :destroy, :update ]
+    resources :bookings, only: [ :new, :create, :update ]
   end
+  resources :bookings, only: [:destroy, :index, :booking_by_user]
+
+get 'pages/cgu'
+
 
 #le nesting ci dessous est un essaie, si ca ne fonctionnepas, on l'enlevera
 

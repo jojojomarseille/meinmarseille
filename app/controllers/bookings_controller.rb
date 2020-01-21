@@ -33,8 +33,8 @@ def create
     @booking.product = @product
     @booking.user = current_user
     @booking.save
-    redirect_to product_bookings_path
-  end
+    redirect_to booking_by_user_path
+end
 
 def update
     Booking.find(params[:id]).update  status: params[:status]

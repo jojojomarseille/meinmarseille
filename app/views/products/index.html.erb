@@ -33,7 +33,6 @@
       </div>
     </div>
 
-<p> <%= current_user.id%></p>
   <div class="cards">
 
     <% @les_produits.each do |un_produit| %>
@@ -44,10 +43,6 @@
       <div class="card-body">
         <h5 class="card-title"><a href="/products/<%= un_produit.id %>"><%= un_produit.title%></a></h5>
 
-
-        <p> <%= humanized_money_with_symbol(un_produit.price) %></p>
-
-        <%= button_to "voir plus", line_items_path(product_id: un_produit), class: "btn btn-primary" %>
       </div>
     </div>
     <% end %>
