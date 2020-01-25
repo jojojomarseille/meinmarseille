@@ -34,6 +34,7 @@ def create
     @booking.user = current_user
     @booking.save
     redirect_to booking_by_user_path
+    BookingMailer.creation_confirmation(@booking).deliver_now
 end
 
 def update

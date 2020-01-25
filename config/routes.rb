@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
 
 
+  get 'contact/index'
+  get 'contact/create'
+  get 'home/index'
   ActiveAdmin.routes(self)
   resources :line_items
   resources :carts
   devise_for :users
   root to: 'products#index'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :products do
     resources :bookings, only: [ :new, :create, :update ]
@@ -14,6 +18,9 @@ Rails.application.routes.draw do
 
 get 'pages/cgu'
 
+  get 'contacts' => 'contacts#index'
+  get 'contacts/new'
+  post 'contacts' => 'contacts#create'
 
 #le nesting ci dessous est un essaie, si ca ne fonctionnepas, on l'enlevera
 

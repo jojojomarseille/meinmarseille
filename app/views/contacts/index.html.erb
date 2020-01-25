@@ -1,0 +1,17 @@
+<h1>Contact#index</h1>
+
+<% @contacts.each do |contact| %>
+    <div class="card-product">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+
+      <div class="card-product-infos">
+        <h2>contact no <%= contact.id%> du <%= contact.created_at %> </h2>
+
+        <p> sujet: <%= contact.sujet%></p>
+        <p> contenu: <%= contact.contenu%></p>
+        <p> user_id: <%= contact.user_id%></p>
+        <p> mail: <%= contact.mail%></p>
+      </div>
+
+    </div>
+  <% end %>
