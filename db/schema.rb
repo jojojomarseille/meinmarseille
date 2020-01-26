@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_25_004541) do
+ActiveRecord::Schema.define(version: 2020_01_25_211509) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -103,19 +103,6 @@ ActiveRecord::Schema.define(version: 2020_01_25_004541) do
     t.index ["zone_id"], name: "index_products_on_zone_id"
   end
 
-  create_table "reservations", force: :cascade do |t|
-    t.date "date_demande"
-    t.date "date_reservation"
-    t.string "nombre_participants"
-    t.string "status"
-    t.bigint "user_id", null: false
-    t.bigint "product_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["product_id"], name: "index_reservations_on_product_id"
-    t.index ["user_id"], name: "index_reservations_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -142,6 +129,4 @@ ActiveRecord::Schema.define(version: 2020_01_25_004541) do
   add_foreign_key "line_items", "products"
   add_foreign_key "orders", "carts"
   add_foreign_key "orders", "users"
-  add_foreign_key "reservations", "products"
-  add_foreign_key "reservations", "users"
 end
