@@ -46454,3 +46454,114 @@ Processing by ProductsController#show as HTML
 Completed 200 OK in 39ms (Views: 29.4ms | ActiveRecord: 2.8ms | Allocations: 45304)
 
 
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-01-28 18:20:54 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/43BYOBbd4KvkpwqRZBUK9VVAhfjjYAudyLBywOtOKYDgcC1cIweeB2FfGmbbsFtJirC1MsLOkJmx4XCnAsmnw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategorie Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/application_controller.rb:7:in `categories_load'
+Redirected to http://localhost:3000/
+Completed 302 Found in 36ms (ActiveRecord: 0.7ms | Allocations: 11831)
+
+
+Started GET "/" for 127.0.0.1 at 2020-01-28 18:20:54 +0000
+Processing by ProductsController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 422)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-01-28 18:20:54 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mCategorie Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/application_controller.rb:7:in `categories_load'
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 644)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 42.4ms | Allocations: 16510)
+  [1m[36mCategorie Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_navbar.html.erb:26
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | Allocations: 1450)
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 29)
+Completed 200 OK in 67ms (Views: 64.0ms | ActiveRecord: 0.6ms | Allocations: 51698)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-01-28 18:20:56 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mCategorie Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/application_controller.rb:7:in `categories_load'
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 123)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 28.5ms | Allocations: 7220)
+  [1m[36mCategorie Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_navbar.html.erb:26
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | Allocations: 1444)
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 29)
+Completed 200 OK in 50ms (Views: 47.9ms | ActiveRecord: 0.6ms | Allocations: 41679)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-01-28 18:21:14 +0000
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"CeA9rf6Zewr4lyeAdecddysKb8tvGKcCNcgur1nX0QuGQWRSVoTv+s8mfTD8IfdII7A012rzlW/wPDKk8AA4Mw==", "user"=>{"email"=>"bourquardez.joachim@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mCategorie Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/application_controller.rb:7:in `categories_load'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bourquardez.joachim@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (42.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "bourquardez.joachim@gmail.com"], ["encrypted_password", "$2a$11$y6MhmC2Wlyqx0/ZaXwoI8eDx3h.6.0BdeO7jEJbTXLjc10lc5s1Mm"], ["created_at", "2020-01-28 18:21:14.758716"], ["updated_at", "2020-01-28 18:21:14.758716"]]
+  Rendering user_mailer/welcome.html.erb within layouts/mailer
+  Rendered user_mailer/welcome.html.erb within layouts/mailer (Duration: 0.2ms | Allocations: 114)
+UserMailer#welcome: processed outbound mail in 3.2ms
+Delivered mail 5e307b9b3bf21_2b4e2b1e7483eba0270a3@bourquardezfix.mail (37.7ms)
+Date: Tue, 28 Jan 2020 18:21:15 +0000
+From: joachim.gaivota@gmail.com
+To: bourquardez.joachim@gmail.com
+Message-ID: <5e307b9b3bf21_2b4e2b1e7483eba0270a3@bourquardezfix.mail>
+Subject: bonjour  user no :8
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    
+<p>Hi bourquardez.joachim@gmail.com,</p>
+
+<p>Today we'll talk about SMTP and Postmark!</p>
+
+<p>See ya!</p>
+
+  </body>
+</html>
+
+  [1m[35m (11.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 675ms (ActiveRecord: 54.1ms | Allocations: 48890)
+
+
+Started GET "/" for 127.0.0.1 at 2020-01-28 18:21:15 +0000
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCategorie Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/application_controller.rb:7:in `categories_load'
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT $1 OFFSET $2[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:38
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:52
+  Rendered products/index.html.erb within layouts/application (Duration: 15.8ms | Allocations: 15198)
+  [1m[36mCategorie Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_navbar.html.erb:26
+  Rendered shared/_navbar.html.erb (Duration: 2.7ms | Allocations: 2642)
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 29)
+Completed 200 OK in 67ms (Views: 62.3ms | ActiveRecord: 1.3ms | Allocations: 51476)
+
+
