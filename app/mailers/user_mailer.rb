@@ -11,6 +11,6 @@ class UserMailer < ApplicationMailer
     # This will render a view in `app/views/user_mailer`!
     @user = user
     @greeting = "hi!"
-    mail to: @user.email, subject: "bonjour #{@user.id}"
+    mail to: @user.email, subject: "bonjour  user no :#{@user.id}"
   end
 end
