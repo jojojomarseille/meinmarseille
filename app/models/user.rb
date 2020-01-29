@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :orders
   has_many :bookings
 
-after_create :send_welcome_email
+#after_create :send_welcome_email
 
   private
 
