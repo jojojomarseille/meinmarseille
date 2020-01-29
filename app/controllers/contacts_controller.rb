@@ -13,6 +13,6 @@ class ContactsController < ApplicationController
   @contact = Contact.create contenu: params[:contenu], sujet: params[:sujet], mail: params[:mail], user_id: @user.id
   redirect_to contacts_path
 
-    ContactMailer.contact_mail(@contact).deliver_now
+    #ContactMailer.contact_mail(@contact).deliver_now
   end
 end
