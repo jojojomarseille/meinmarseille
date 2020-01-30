@@ -25,7 +25,6 @@ gem 'stripe'
 gem 'stripe_event'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'mail_form'
-gem 'mail'
 gem 'jquery-rails', '~> 4.1', '>= 4.1.1'
 
 
