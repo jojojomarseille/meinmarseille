@@ -7,6 +7,6 @@ class ContactMailer < ApplicationMailer
   #
   def contact_mail(contact)
     @contact = contact
-    mail to: "bourquardez.joachim@gmail.com", subject: "MeinMarseille Demande de contact no #{@contact.id}"
+    mail to: bourquardez.joachim@gmail.com, subject: "MeinMarseille Demande de contact no #{@contact.id}"
   end
 end
