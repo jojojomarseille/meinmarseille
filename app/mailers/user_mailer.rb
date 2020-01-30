@@ -14,3 +14,4 @@ class UserMailer < ApplicationMailer
     mail to: @user.email, subject: "bonjour  user no :#{@user.id}"
   end
 end
+
