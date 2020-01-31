@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :bookings, only: [:destroy, :index, :booking_by_user]
 
 get 'pages/cgu'
+get 'pages/user'
 
   get 'contacts' => 'contacts#index'
   get 'contacts/new'

@@ -58,7 +58,7 @@
             <% else %>
             <% end %>
             <%= link_to "mes bookings", booking_by_user_path, class: "dropdown-item" %>
-            <%= link_to "mes infos", "#", class: "dropdown-item" %>
+            <%= link_to "mes infos", "pages/user", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
