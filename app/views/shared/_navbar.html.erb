@@ -3,17 +3,14 @@
     <%= image_tag "logo.png"%>
     <% end %>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
 
   <div class="navbar-categories ">
-    <ul class="navbar-categories-list navbar-nav mr-auto">
+    <ul class="navbar-categories-list navbar-nav mr-auto" >
 
       <% @lescategories.each do |categorie| %>
-      <li classe="catego ">
-        <%= link_to "#{categorie.name}", "/productsby/#{categorie.id}" %>
+      <li classe="catego " >
+        <%= link_to "#{categorie.name}", "/productsby/#{categorie.id}", class: 'link-to-text-color'%>
       </li>
       <% end %>
 
@@ -32,19 +29,10 @@
     </ul>
   </div>
 
-<%= session[:cart_id] %>
-
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-
-
-        <li class="nav-item ">
-          <%= link_to  "/carts/#{session[:cart_id]} " do %>
-          <%= image_tag "shopping-cart.png" %>
-          <% end %>
-        </li>
 
         <li class="nav-item dropdown">
           <%= image_tag "sailor.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -58,6 +46,7 @@
             <% else %>
             <% end %>
             <%= link_to "mes bookings", booking_by_user_path, class: "dropdown-item" %>
+            <%= link_to "mon panier", "/carts/#{session[:cart_id]} ", class: "dropdown-item" %>
             <%= link_to "mes infos", "pages/user", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
@@ -69,4 +58,6 @@
       <% end %>
     </ul>
   </div>
+
+
 </div>

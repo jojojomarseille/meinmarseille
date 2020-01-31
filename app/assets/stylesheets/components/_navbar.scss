@@ -5,9 +5,27 @@
         right: 0;
 position:fixed;
 z-index:1;
-border-bottom: solid black 1px;
+border-bottom: solid $light-gray 1px;
 
 }
+
+.navbar-categories-list {
+  font-size: 20px;
+}
+
+.navbar-categories-list li {
+  margin-right: 25px;
+  margin_left: 5px;
+
+}
+
+
+.link-to-text-color {
+text-decoration: none !important;
+text-color: none !important;
+}
+
+
 
 .navbar-lewagon {
   justify-content: space-between;
@@ -23,9 +41,6 @@ border-bottom: solid black 1px;
 }
 
 .nav-item img {
-  width: 50px;
+  width: 40px;
 }
 
-li {
-  margin-right: 10px;
-}
