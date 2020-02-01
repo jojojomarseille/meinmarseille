@@ -12,9 +12,9 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :products do
-    resources :bookings, only: [ :new, :create, :update ]
+    resources :bookings, only: [ :new, :create ]
   end
-  resources :bookings, only: [:destroy, :index, :booking_by_user]
+  resources :bookings, only: [:destroy, :index, :booking_by_user, :update]
 
 get 'pages/cgu'
 get 'pages/user'
