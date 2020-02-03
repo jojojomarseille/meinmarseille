@@ -34,6 +34,24 @@
         <ul> <%= image_tag "multiple-users-silhouette.png"%> Participants max : 10 personnes </ul>
         <ul> <%= image_tag "smiling-baby.png"%> Enfants: oui </ul>
       </li>
+
+      <div class="pricegrid">
+
+      <h5> Tarif par personne </h5>
+      <div class="row">
+      <div class="col-md-4 case ">1 - 5</div>
+      <div class="col-md-4 case">6 - 10</div>
+      <div class="col-md-4 case">+ de 10</div>
+      </div>
+
+      <div class="row">
+      <div class="col-md-4 case"><%=@product.price%></div>
+      <div class="col-md-4 case"><%=@price2%></div>
+      <div class="col-md-4 case"><%=@price3%></div>
+      </div>
+
+      </div>
+
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Reserver
     </button>
