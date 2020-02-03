@@ -37,6 +37,8 @@
 <button type="submit" class="btn btn-primary"> creer </button>
 </div>
 
+
+
 <% end %>
 
 
@@ -44,7 +46,7 @@
 
 
 
-
+form qui fonctionne avec la photo:
  <%= simple_form_for @product do |f| %>
         <div class="label">Titre</div>
         <div class="typo"> <%= f.input :title, label: false %> </div>
@@ -60,9 +62,7 @@
         <div class="label">categorie_id</div>
         <div class="typo"> <%= f.input :categorie_id, label: false %> </div>
 
-
-        <%= f.input :photo %>
-        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.input :photo, as: :file %>
 
     <%= f.button :submit %>
 

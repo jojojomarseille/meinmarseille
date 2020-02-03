@@ -38,7 +38,7 @@
     <% @les_produits.each do |un_produit| %>
     <div class="card " style="width: 40rem;">
       <a href="/products/<%= un_produit.id %>">
-      <%= image_tag "cours-ju.jpg" %>
+      <%= cl_image_tag un_produit.photo %>
       </a>
       <div class="card-body">
 

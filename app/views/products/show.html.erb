@@ -5,7 +5,7 @@
   <div class="row">
     <div class="product-card col-sm-12">
       <div class=" bloc-photo col-sm-12 ">
-        <%= image_tag "cours-ju.jpg" %>
+        <%= cl_image_tag @product.photo %>
         <h1> <%=@product.title%><%=@product.id%></h1>
 
       </div>
@@ -51,6 +51,11 @@
       </div>
 
       </div>
+
+
+      <%= cl_image_tag("nx22to6hjc913ch8lynk",
+      width: 400, height: 300, crop: :fill) %>
+
 
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Reserver

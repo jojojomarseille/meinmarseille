@@ -39,7 +39,7 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
             <%if current_user.admin %>
-            <%= link_to "creer un produit", "products/new", class: "dropdown-item" %>
+            <%= link_to "creer un produit", new_product_path, class: "dropdown-item" %>
             <%= link_to "zone admin", "/admin", class: "dropdown-item" %>
             <%= link_to "bookings a traiter", bookings_path, class: "dropdown-item" %>
             <%= link_to "demande de contacts", contacts_path, class: "dropdown-item" %>

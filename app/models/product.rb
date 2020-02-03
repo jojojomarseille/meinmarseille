@@ -5,7 +5,9 @@ class Product < ActiveRecord::Base
   has_many :bookings
   monetize :price_cents
 
-  mount_uploader :photo, PhotoUploader #cela definie, je ne sait pas comment qu'il y a un photo uploader pour ce model
+  has_one_attached :photo
+
+  mount_uploader :photo, PhotoUploader #cela definie, je ne sait pas comment qu'il y a un photo uploader pour ce model, c'est ptet pas utile, tester sans si ca fonctionne tjr un jour
 
    validates :title, presence: {
     message: "Le titre doit être renseigné."
