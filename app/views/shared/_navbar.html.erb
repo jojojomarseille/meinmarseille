@@ -4,7 +4,7 @@
     <% end %>
 
 
-
+<% if user_signed_in? %>
   <div class="navbar-categories ">
     <ul class="navbar-categories-list navbar-nav mr-auto" >
 
@@ -28,7 +28,8 @@
       </li>
     </ul>
   </div>
-
+<% else %>
+<% end %>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
