@@ -36,6 +36,7 @@ get 'pages/user'
 
   #delete 'products/:id' => 'products#destroy'
   get 'productsby/:id' => 'products#index_by_categorie'
+  get 'index_admin' => 'products#index_admin'
 
   get 'zones' => 'zones#index'
   get 'zones/new'

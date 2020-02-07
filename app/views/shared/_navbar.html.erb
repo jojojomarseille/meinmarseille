@@ -44,6 +44,10 @@
             <%= link_to "zone admin", "/admin", class: "dropdown-item" %>
             <%= link_to "bookings a traiter", bookings_path, class: "dropdown-item" %>
             <%= link_to "demande de contacts", contacts_path, class: "dropdown-item" %>
+            <%= link_to "categories", categories_path, class: "dropdown-item" %>
+            <%= link_to "zones", zones_path, class: "dropdown-item" %>
+            <%= link_to "visittes", index_admin_path, class: "dropdown-item" %>
+            <p> </p>
             <% else %>
             <% end %>
             <%= link_to "mes bookings", booking_by_user_path, class: "dropdown-item" %>

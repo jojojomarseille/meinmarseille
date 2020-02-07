@@ -1,0 +1,24 @@
+<h1> Les visittes (admin) </h1>
+
+<% @les_produits.each do |product| %>
+    <div class="card-product">
+      <%= cl_image_tag product.photo %>
+
+      <div class="card-product-infos">
+        <h2>Visitte no <%= product.id%>: <%= product.title %></h2>
+        <p> <%= product.subtitle %> </p>
+        <p> <%= product.description %> </p>
+
+      </div>
+      <div class="card-product-infos2">
+
+
+        <%= form_tag "/products/#{product.id}", method: "delete" do %>
+          <input type="submit" class="btn btn-primary" value="Supprimer la visitte" />
+          <% end %>
+
+      </div>
+
+
+    </div>
+  <% end %>

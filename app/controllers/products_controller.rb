@@ -3,6 +3,10 @@ class ProductsController < ApplicationController
     @les_produits = Product.page(params[:page]).per(8)
   end
 
+  def index_admin
+    @les_produits = Product.all
+  end
+
   def show
 
     @booking = Booking.new
