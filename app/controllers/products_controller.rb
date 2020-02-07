@@ -17,6 +17,13 @@ class ProductsController < ApplicationController
 
   end
 
+  def show_admin
+     @product = Product.find(params[:id])
+    @products =Product.categorie_id(@product.categorie.id).page(params[:page]).per(4)
+    @price2 = @product.price * 1.2
+    @price3 = @product.price * 1.4
+  end
+
   def index_by_categorie
     @productby = Product.categorie_id(params[:id]).page(params[:page]).per(8)
   end
@@ -25,6 +32,7 @@ class ProductsController < ApplicationController
    @product = Product.new
    @categories = Categorie.all
    @zones = Zone.all
+
 
  end
 
@@ -39,7 +47,7 @@ class ProductsController < ApplicationController
     Product.find(params[:id]).update title: params[:title], subtitle: params[:subtitle], description: params[:description], price: params[:price], categorie_id: params[:categorie_id], zone_id: params[:zone_id], photo: params[:photo]
 
     if @product.update title: params[:title]
-      redirect_to "/products/#{params[:id]}"
+      redirect_to "/index_admin/#{params[:id]}"
     else
       render 'show'
     end

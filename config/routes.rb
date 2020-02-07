@@ -32,11 +32,12 @@ get 'pages/user'
   #post 'products' => 'products#create'
 
   #get 'products/:id' => 'products#show'
-  #patch 'products/:id' => 'products#update'
+  patch 'products/:id' => 'products#update'
 
   #delete 'products/:id' => 'products#destroy'
   get 'productsby/:id' => 'products#index_by_categorie'
   get 'index_admin' => 'products#index_admin'
+  get 'index_admin/:id' => 'products#show_admin'
 
   get 'zones' => 'zones#index'
   get 'zones/new'

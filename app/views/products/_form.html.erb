@@ -16,7 +16,7 @@ form qui fonctionne avec la photo:
         <div class="label">zone_id</div>
         <div class="typo"> <%= f.input :zone_id, collection: @zones , label: false %> </div>
         <div class="label">categorie_id</div>
-        <div class="typo"> <%= f.input :categorie_id, label: false %> </div>
+        <div class="typo"> <%= f.input :categorie_id, collection:@categories , label: false %> </div>
 
         <%= f.input :photo, as: :file %>
 
