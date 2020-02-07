@@ -8,8 +8,8 @@ class ProductsController < ApplicationController
     @booking = Booking.new
     @product = Product.find(params[:id])
     @products =Product.categorie_id(@product.categorie.id).page(params[:page]).per(4)
-    @price2 = @product.price * 0.8
-    @price3 = @product.price * 0.7
+    @price2 = @product.price * 1.2
+    @price3 = @product.price * 1.4
 
   end
 
