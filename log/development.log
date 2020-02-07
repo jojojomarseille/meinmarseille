@@ -54895,3 +54895,83 @@ Processing by BookingsController#booking_by_users as HTML
 Completed 200 OK in 60ms (Views: 55.7ms | ActiveRecord: 1.3ms | Allocations: 38426)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constants StripeCheckoutSessionService, ActionText::ContentHelper, and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload StripeCheckoutSessionService, for example,
+the expected changes won't be reflected in that stale Class object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /home/jojo/code/jojojomarseille/meinmarseille/config/environment.rb:5)
+Started GET "/" for 127.0.0.1 at 2020-02-06 20:03:57 +0000
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+Completed 401 Unauthorized in 37ms (ActiveRecord: 0.0ms | Allocations: 1681)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-02-06 20:03:58 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mCategorie Load (19.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/application_controller.rb:7:in `categories_load'
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 9.1ms | Allocations: 642)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 399.9ms | Allocations: 24398)
+  Rendered shared/_navbar.html.erb (Duration: 10.4ms | Allocations: 1509)
+  Rendered shared/_flashes.html.erb (Duration: 6.5ms | Allocations: 201)
+  Rendered shared/_footer.html.erb (Duration: 7.7ms | Allocations: 173)
+Completed 200 OK in 2980ms (Views: 2847.9ms | ActiveRecord: 79.2ms | Allocations: 1597453)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-02-06 20:04:12 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"zvixIDVJ8seOkpBZNiIMiaxXKYj/icql0zqyLSn6rmZUOjK1z6pZVe58gqPmcDqA1IlAuUFqugOGYgjfUO8p4A==", "user"=>{"email"=>"j.bourquardez@laposte.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mCategorie Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/application_controller.rb:7:in `categories_load'
+  [1m[36mUser Load (8.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "j.bourquardez@laposte.net"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 286ms (ActiveRecord: 9.5ms | Allocations: 8312)
+
+
+Started GET "/" for 127.0.0.1 at 2020-02-06 20:04:12 +0000
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategorie Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/application_controller.rb:7:in `categories_load'
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (17.5ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT $1 OFFSET $2[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:38
+  [1m[35m (16.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:53
+  Rendered products/index.html.erb within layouts/application (Duration: 147.4ms | Allocations: 22489)
+  [1m[36mCategorie Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_navbar.html.erb:23
+  Rendered shared/_navbar.html.erb (Duration: 2.6ms | Allocations: 2198)
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 27)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 29)
+Completed 200 OK in 174ms (Views: 132.0ms | ActiveRecord: 37.8ms | Allocations: 58362)
+
+
+Started GET "/" for 127.0.0.1 at 2020-02-06 20:04:19 +0000
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategorie Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/application_controller.rb:7:in `categories_load'
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT $1 OFFSET $2[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:38
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:53
+  Rendered products/index.html.erb within layouts/application (Duration: 14.5ms | Allocations: 8174)
+  [1m[36mCategorie Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_navbar.html.erb:23
+  Rendered shared/_navbar.html.erb (Duration: 2.5ms | Allocations: 2178)
+  Rendered shared/_flashes.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 29)
+Completed 200 OK in 38ms (Views: 29.1ms | ActiveRecord: 5.9ms | Allocations: 43045)
+
+
