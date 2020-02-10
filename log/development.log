@@ -57429,3 +57429,365 @@ Processing by ProductsController#show_admin as HTML
 Completed 200 OK in 42ms (Views: 35.4ms | ActiveRecord: 1.9ms | Allocations: 39903)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constants StripeCheckoutSessionService, ActionText::ContentHelper, and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload StripeCheckoutSessionService, for example,
+the expected changes won't be reflected in that stale Class object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /home/jojo/code/jojojomarseille/meinmarseille/config/environment.rb:5)
+Started GET "/" for 127.0.0.1 at 2020-02-10 20:58:23 +0000
+  [1m[35m (6.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+Completed 401 Unauthorized in 24ms (ActiveRecord: 0.0ms | Allocations: 1162)
+
+
+Started GET "/" for 127.0.0.1 at 2020-02-10 20:58:25 +0000
+Processing by ProductsController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 262)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-02-10 20:58:25 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mCategorie Load (19.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/application_controller.rb:7:in `categories_load'
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 7.0ms | Allocations: 642)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 241.8ms | Allocations: 16615)
+  Rendered shared/_navbar.html.erb (Duration: 11.9ms | Allocations: 1575)
+  Rendered shared/_flashes.html.erb (Duration: 7.2ms | Allocations: 201)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 173)
+Completed 200 OK in 2351ms (Views: 2238.9ms | ActiveRecord: 84.9ms | Allocations: 1588579)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-02-10 21:09:08 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"z10iCDuTftC38P1mKsGnbjKZSl5ro7tbFti5VqUSadh23ZAEYDJCiguJwuHHPH0oqLgcG4Bbm83cNAzM2GQjcw==", "user"=>{"email"=>"j.bourquardez@laposte.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mCategorie Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/application_controller.rb:7:in `categories_load'
+  [1m[36mUser Load (10.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "j.bourquardez@laposte.net"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 244ms (ActiveRecord: 11.0ms | Allocations: 6606)
+
+
+Started GET "/" for 127.0.0.1 at 2020-02-10 21:09:08 +0000
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategorie Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/application_controller.rb:7:in `categories_load'
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (18.0ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT $1 OFFSET $2[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:38
+  [1m[35m (15.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:53
+  Rendered products/index.html.erb within layouts/application (Duration: 117.0ms | Allocations: 19260)
+  [1m[36mCategorie Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_navbar.html.erb:23
+  Rendered shared/_navbar.html.erb (Duration: 2.7ms | Allocations: 2285)
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 27)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 29)
+Completed 200 OK in 144ms (Views: 102.0ms | ActiveRecord: 38.8ms | Allocations: 55214)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2020-02-10 21:13:02 +0000
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategorie Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/application_controller.rb:7:in `categories_load'
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mZone Load (30.9ms)[0m  [1m[34mSELECT "zones".* FROM "zones"[0m
+  ↳ app/views/products/_form.html.erb:17
+  [1m[36mCategorie Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:19
+  Rendered products/_form.html.erb (Duration: 87.5ms | Allocations: 18637)
+  Rendered products/new.html.erb within layouts/application (Duration: 88.1ms | Allocations: 18956)
+  [1m[36mCACHE Categorie Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_navbar.html.erb:23
+  Rendered shared/_navbar.html.erb (Duration: 2.0ms | Allocations: 2203)
+  Rendered shared/_flashes.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 29)
+Completed 200 OK in 113ms (Views: 75.1ms | ActiveRecord: 34.3ms | Allocations: 54126)
+
+
+Started GET "/bookings" for 127.0.0.1 at 2020-02-10 21:13:08 +0000
+Processing by BookingsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategorie Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/application_controller.rb:7:in `categories_load'
+  Rendering bookings/index.html.erb within layouts/application
+  [1m[36mBooking Load (30.1ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" LIMIT $1 OFFSET $2[0m  [["LIMIT", 12], ["OFFSET", 0]]
+  ↳ app/views/bookings/index.html.erb:4
+  Rendered bookings/index.html.erb within layouts/application (Duration: 56.9ms | Allocations: 8268)
+  [1m[36mCategorie Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_navbar.html.erb:23
+  Rendered shared/_navbar.html.erb (Duration: 2.4ms | Allocations: 2318)
+  Rendered shared/_flashes.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 29)
+Completed 200 OK in 88ms (Views: 44.2ms | ActiveRecord: 34.0ms | Allocations: 44979)
+
+
+Started GET "/admin" for 127.0.0.1 at 2020-02-10 21:13:10 +0000
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategorie Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/application_controller.rb:7:in `categories_load'
+  Rendering /home/jojo/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/bundler/gems/activeadmin-a496b8c74356/app/views/active_admin/page/index.html.arb
+  Rendered /home/jojo/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/bundler/gems/activeadmin-a496b8c74356/app/views/active_admin/page/index.html.arb (Duration: 53.4ms | Allocations: 24979)
+Completed 200 OK in 94ms (Views: 62.8ms | ActiveRecord: 0.5ms | Allocations: 28580)
+
+
+Started GET "/admin/products" for 127.0.0.1 at 2020-02-10 21:13:12 +0000
+Processing by Admin::ProductsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategorie Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/application_controller.rb:7:in `categories_load'
+  Rendering /home/jojo/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/bundler/gems/activeadmin-a496b8c74356/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "products" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "products" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "products" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCategorie Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Categorie Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Categorie Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Categorie Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategorie Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Categorie Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Categorie Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Categorie Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Categorie Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mZone Load (0.3ms)[0m  [1m[34mSELECT "zones".* FROM "zones" WHERE "zones"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Zone Load (0.0ms)[0m  [1m[34mSELECT "zones".* FROM "zones" WHERE "zones"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Zone Load (0.0ms)[0m  [1m[34mSELECT "zones".* FROM "zones" WHERE "zones"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Zone Load (0.0ms)[0m  [1m[34mSELECT "zones".* FROM "zones" WHERE "zones"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Zone Load (0.0ms)[0m  [1m[34mSELECT "zones".* FROM "zones" WHERE "zones"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Zone Load (0.0ms)[0m  [1m[34mSELECT "zones".* FROM "zones" WHERE "zones"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Zone Load (0.0ms)[0m  [1m[34mSELECT "zones".* FROM "zones" WHERE "zones"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Zone Load (0.0ms)[0m  [1m[34mSELECT "zones".* FROM "zones" WHERE "zones"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Zone Load (0.0ms)[0m  [1m[34mSELECT "zones".* FROM "zones" WHERE "zones"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategorie Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mZone Load (0.3ms)[0m  [1m[34mSELECT "zones".* FROM "zones"[0m
+  [1m[36mLineItem Load (13.4ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items"[0m
+  [1m[36mBooking Load (0.4ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings"[0m
+  [1m[36mActiveStorage::Attachment Load (30.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments"[0m
+  [1m[36mActiveStorage::Blob Load (12.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs"[0m
+  Rendered /home/jojo/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/bundler/gems/activeadmin-a496b8c74356/app/views/active_admin/resource/index.html.arb (Duration: 463.6ms | Allocations: 154734)
+Completed 200 OK in 516ms (Views: 418.5ms | ActiveRecord: 67.7ms | Allocations: 159201)
+
+
+Started GET "/" for 127.0.0.1 at 2020-02-10 21:13:33 +0000
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategorie Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/application_controller.rb:7:in `categories_load'
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT $1 OFFSET $2[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:38
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:53
+  Rendered products/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 8246)
+  [1m[36mCategorie Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_navbar.html.erb:23
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | Allocations: 2277)
+  Rendered shared/_flashes.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 29)
+Completed 200 OK in 30ms (Views: 25.9ms | ActiveRecord: 1.2ms | Allocations: 43214)
+
+
+Started GET "/products/33" for 127.0.0.1 at 2020-02-10 21:13:37 +0000
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"33"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategorie Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/application_controller.rb:7:in `categories_load'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:13:in `show'
+  [1m[36mCategorie Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:14:in `show'
+  Rendering products/show.html.erb within layouts/application
+  Rendered bookings/_form.html.erb (Duration: 11.2ms | Allocations: 239)
+  Rendered contacts/_form.html.erb (Duration: 5.2ms | Allocations: 421)
+  Rendered products/show.html.erb within layouts/application (Duration: 36.9ms | Allocations: 4963)
+  [1m[36mCategorie Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_navbar.html.erb:23
+  Rendered shared/_navbar.html.erb (Duration: 3.7ms | Allocations: 2298)
+  Rendered shared/_flashes.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 29)
+Completed 200 OK in 98ms (Views: 85.1ms | ActiveRecord: 1.1ms | Allocations: 41563)
+
+
+Started GET "/products/33" for 127.0.0.1 at 2020-02-10 21:14:27 +0000
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"33"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategorie Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/application_controller.rb:7:in `categories_load'
+  [1m[36mProduct Load (2.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:13:in `show'
+  [1m[36mCategorie Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:14:in `show'
+  Rendering products/show.html.erb within layouts/application
+  Rendered bookings/_form.html.erb (Duration: 1.1ms | Allocations: 234)
+  Rendered contacts/_form.html.erb (Duration: 0.9ms | Allocations: 413)
+  Rendered products/show.html.erb within layouts/application (Duration: 11.6ms | Allocations: 5054)
+  [1m[36mCategorie Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_navbar.html.erb:23
+  Rendered shared/_navbar.html.erb (Duration: 3.8ms | Allocations: 3049)
+  Rendered shared/_flashes.html.erb (Duration: 0.2ms | Allocations: 191)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 164)
+Completed 200 OK in 88ms (Views: 74.0ms | ActiveRecord: 3.3ms | Allocations: 44233)
+
+
+Started GET "/products/33" for 127.0.0.1 at 2020-02-10 21:14:41 +0000
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"33"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategorie Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/application_controller.rb:7:in `categories_load'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:13:in `show'
+  [1m[36mCategorie Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:14:in `show'
+  Rendering products/show.html.erb within layouts/application
+  Rendered bookings/_form.html.erb (Duration: 0.5ms | Allocations: 234)
+  Rendered contacts/_form.html.erb (Duration: 0.5ms | Allocations: 413)
+  Rendered products/show.html.erb within layouts/application (Duration: 5.0ms | Allocations: 4945)
+  [1m[36mCategorie Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_navbar.html.erb:23
+  Rendered shared/_navbar.html.erb (Duration: 3.1ms | Allocations: 3047)
+  Rendered shared/_flashes.html.erb (Duration: 0.2ms | Allocations: 191)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 164)
+Completed 200 OK in 34ms (Views: 27.6ms | ActiveRecord: 1.2ms | Allocations: 44258)
+
+
+Started GET "/products" for 127.0.0.1 at 2020-02-10 21:14:44 +0000
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategorie Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/application_controller.rb:7:in `categories_load'
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT $1 OFFSET $2[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:38
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:53
+  Rendered products/index.html.erb within layouts/application (Duration: 10.5ms | Allocations: 9939)
+  [1m[36mCategorie Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_navbar.html.erb:23
+  Rendered shared/_navbar.html.erb (Duration: 2.2ms | Allocations: 2275)
+  Rendered shared/_flashes.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 29)
+Completed 200 OK in 33ms (Views: 27.9ms | ActiveRecord: 1.5ms | Allocations: 45163)
+
+
+Started GET "/products/20" for 127.0.0.1 at 2020-02-10 21:14:47 +0000
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategorie Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/application_controller.rb:7:in `categories_load'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:13:in `show'
+  [1m[36mCategorie Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:14:in `show'
+  Rendering products/show.html.erb within layouts/application
+  Rendered bookings/_form.html.erb (Duration: 0.2ms | Allocations: 92)
+  Rendered contacts/_form.html.erb (Duration: 0.2ms | Allocations: 171)
+  Rendered products/show.html.erb within layouts/application (Duration: 3.7ms | Allocations: 3811)
+  [1m[36mCategorie Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_navbar.html.erb:23
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | Allocations: 2286)
+  Rendered shared/_flashes.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 29)
+Completed 200 OK in 30ms (Views: 23.3ms | ActiveRecord: 1.1ms | Allocations: 40160)
+
+
+Started GET "/?page=2" for 127.0.0.1 at 2020-02-10 21:19:35 +0000
+Processing by ProductsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategorie Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/application_controller.rb:7:in `categories_load'
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT $1 OFFSET $2[0m  [["LIMIT", 8], ["OFFSET", 8]]
+  ↳ app/views/products/index.html.erb:38
+  Rendered products/index.html.erb within layouts/application (Duration: 11.9ms | Allocations: 4671)
+  [1m[36mCategorie Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_navbar.html.erb:23
+  Rendered shared/_navbar.html.erb (Duration: 2.5ms | Allocations: 2275)
+  Rendered shared/_flashes.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 29)
+Completed 200 OK in 35ms (Views: 31.6ms | ActiveRecord: 1.0ms | Allocations: 39634)
+
+
+Started GET "/products/30" for 127.0.0.1 at 2020-02-10 21:19:37 +0000
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategorie Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/application_controller.rb:7:in `categories_load'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:13:in `show'
+  [1m[36mCategorie Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:14:in `show'
+  Rendering products/show.html.erb within layouts/application
+  Rendered bookings/_form.html.erb (Duration: 0.2ms | Allocations: 92)
+  Rendered contacts/_form.html.erb (Duration: 0.2ms | Allocations: 171)
+  Rendered products/show.html.erb within layouts/application (Duration: 3.3ms | Allocations: 3874)
+  [1m[36mCategorie Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_navbar.html.erb:23
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | Allocations: 2285)
+  Rendered shared/_flashes.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 29)
+Completed 200 OK in 28ms (Views: 22.5ms | ActiveRecord: 1.2ms | Allocations: 40201)
+
+
+Started GET "/products/30" for 127.0.0.1 at 2020-02-10 21:20:31 +0000
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategorie Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/application_controller.rb:7:in `categories_load'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:13:in `show'
+  [1m[36mCategorie Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:14:in `show'
+  Rendering products/show.html.erb within layouts/application
+  Rendered bookings/_form.html.erb (Duration: 0.2ms | Allocations: 92)
+  Rendered contacts/_form.html.erb (Duration: 0.2ms | Allocations: 171)
+  Rendered products/show.html.erb within layouts/application (Duration: 3.4ms | Allocations: 3875)
+  [1m[36mCategorie Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_navbar.html.erb:23
+  Rendered shared/_navbar.html.erb (Duration: 2.5ms | Allocations: 2285)
+  Rendered shared/_flashes.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 29)
+Completed 200 OK in 27ms (Views: 22.2ms | ActiveRecord: 1.2ms | Allocations: 40211)
+
+
+Started GET "/products/30" for 127.0.0.1 at 2020-02-10 21:21:11 +0000
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategorie Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/application_controller.rb:7:in `categories_load'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:13:in `show'
+  [1m[36mCategorie Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:14:in `show'
+  Rendering products/show.html.erb within layouts/application
+  Rendered bookings/_form.html.erb (Duration: 0.5ms | Allocations: 234)
+  Rendered contacts/_form.html.erb (Duration: 0.4ms | Allocations: 413)
+  Rendered products/show.html.erb within layouts/application (Duration: 4.8ms | Allocations: 4963)
+  [1m[36mCategorie Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_navbar.html.erb:23
+  Rendered shared/_navbar.html.erb (Duration: 3.3ms | Allocations: 3049)
+  Rendered shared/_flashes.html.erb (Duration: 0.3ms | Allocations: 191)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 164)
+Completed 200 OK in 32ms (Views: 26.2ms | ActiveRecord: 1.2ms | Allocations: 44122)
+
+
