@@ -8,13 +8,52 @@
   <div class="navbar-categories ">
     <ul class="navbar-categories-list navbar-nav mr-auto" >
 
-      <% @lescategories.each do |categorie| %>
+     <!--  <% @lescategories.each do |categorie| %>
       <li classe="catego " >
         <%= link_to "#{categorie.name}", "/productsby/#{categorie.id}", class: 'link-to-text-color'%>
       </li>
-      <% end %>
+      <% end %> -->
 
       <li classe="categories">
+        <div class="dropdown">
+            <div class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" >
+             Qui sommes nous?
+            </div>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+              <a class="dropdown-item" href="#">Le projet</a>
+              <a class="dropdown-item" href="#">L'équipe</a>
+
+            </div>
+        </div>
+      </li>
+
+      <li classe="categories">
+        <div class="dropdown">
+            <div class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" >
+             Visites
+            </div>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <% @visites10.each do |visite| %>
+              <a class="dropdown-item" href="/products/<%= visite.id %>"><%= visite.title %></a>
+              <% end %>
+            </div>
+        </div>
+      </li>
+
+      <li classe="catego ">
+        Prix
+      </li>
+
+      <li classe="catego ">
+        F A Q
+      </li>
+
+       <li classe="catego ">
+        Contact
+      </li>
+      <!-- ci dessous un menu deroulant qui affiche les categories -->
+      <!-- <li classe="categories">
           <div class="dropdown">
             <div class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" >
               Autres
@@ -25,7 +64,7 @@
               <% end %>
             </div>
           </div>
-      </li>
+      </li> -->
     </ul>
   </div>
 <% else %>
