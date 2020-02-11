@@ -46,7 +46,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     Product.find(params[:id]).update title: params[:title], subtitle: params[:subtitle], description: params[:description], price: params[:price], categorie_id: params[:categorie_id], zone_id: params[:zone_id], photo: params[:photo]
 
-    if @product.update title: params[:title]
+    if @product.update title: params[:title], subtitle: params[:subtitle], description: params[:description]
       redirect_to "/index_admin/#{params[:id]}"
     else
       render 'show'

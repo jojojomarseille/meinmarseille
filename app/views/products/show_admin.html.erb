@@ -52,13 +52,16 @@
 
       </div>
 
-<%= form_tag "/products/#{@product.id}", method: "patch" do %>
+
+
+
+  <%= form_tag "/products/#{@product.id}", method: "patch" do %>
   <input type="text" name="title" value="<%= @product.title %>" />
   <input type="text" name="subtitle" value="<%= @product.subtitle %>" />
-  <input type="text" name="subtitle" value="<%= @product.subtitle %>" />
   <input type="text" name="description" value="<%= @product.description %>" />
-  <input type="submit" value="mettre a jour le produit" />
+  <input type="submit" value="mettre a jour la visite" />
 <% end %>
+
 
 <%= form_tag "/products/#{@product.id}", method: "delete" do %>
  <input type="submit" class="btn btn-primary" value="Supprimer la visitte" />
