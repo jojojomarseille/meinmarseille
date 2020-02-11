@@ -45,7 +45,7 @@ def update
 private
 
 def booking_params
-  params.permit( :comment, :participants, :status, :date, :user_id, :product_id )
+  params.permit( :comment, :participants, :status, :date, :user_id, :product_id, :childs )
 end
 
 end
