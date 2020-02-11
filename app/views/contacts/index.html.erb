@@ -12,6 +12,12 @@
         <p> user_id: <%= contact.user_id%></p>
         <p> mail: <%= contact.mail%></p>
       </div>
+      <div>
+
+        <%= form_tag "/contacts/#{contact.id}", method: "delete" do %>
+          <input type="submit" class="btn btn-primary" value="Supprimer le contact" />
+          <% end %>
+      </div>
 
     </div>
   <% end %>

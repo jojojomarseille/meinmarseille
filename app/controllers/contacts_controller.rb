@@ -15,4 +15,9 @@ class ContactsController < ApplicationController
 
     ContactMailer.contact_mail(@contact).deliver_now
   end
+
+  def destroy
+    Contact.find(params[:id]).destroy
+    redirect_to "/contacts"
+  end
 end

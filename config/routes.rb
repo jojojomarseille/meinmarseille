@@ -22,6 +22,7 @@ get 'pages/user'
   get 'contacts' => 'contacts#index'
   get 'contacts/new'
   post 'contacts' => 'contacts#create'
+  delete 'contacts/:id' => 'contacts#destroy'
 
 #le nesting ci dessous est un essaie, si ca ne fonctionnepas, on l'enlevera
 

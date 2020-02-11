@@ -25,7 +25,7 @@
     <div class="col-sm-6">
       <h2> <%= @product.subtitle %> </h2>
 
-      <P> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</P>
+      <P> <%= @product.description %></P>
     </div>
 
     <div class="bloc-picto-2 col-sm-6">
@@ -55,9 +55,13 @@
 <%= form_tag "/products/#{@product.id}", method: "patch" do %>
   <input type="text" name="title" value="<%= @product.title %>" />
   <input type="text" name="subtitle" value="<%= @product.subtitle %>" />
+  <input type="text" name="subtitle" value="<%= @product.subtitle %>" />
+  <input type="text" name="description" value="<%= @product.description %>" />
   <input type="submit" value="mettre a jour le produit" />
 <% end %>
 
-
+<%= form_tag "/products/#{@product.id}", method: "delete" do %>
+ <input type="submit" class="btn btn-primary" value="Supprimer la visitte" />
+          <% end %>
 
 </div>
