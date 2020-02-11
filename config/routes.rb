@@ -18,6 +18,11 @@ Rails.application.routes.draw do
 
 get 'pages/cgu'
 get 'pages/user'
+get 'pages/contact'
+get 'pages/equipe'
+get 'pages/faq'
+get 'pages/projet'
+get 'pages/prix'
 
   get 'contacts' => 'contacts#index'
   get 'contacts/new'

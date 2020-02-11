@@ -21,8 +21,8 @@
             </div>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
-              <a class="dropdown-item" href="#">Le projet</a>
-              <a class="dropdown-item" href="#">L'équipe</a>
+              <%= link_to "Le projet", pages_projet_path, class: "dropdown-item" %>
+              <%= link_to "L'équipe", pages_equipe_path, class: "dropdown-item" %>
 
             </div>
         </div>
@@ -42,15 +42,15 @@
       </li>
 
       <li classe="catego ">
-        Prix
+        <%= link_to "Prix", pages_prix_path, class: "dropdown-item" %>
       </li>
 
       <li classe="catego ">
-        F A Q
+        <%= link_to "F A Q", pages_faq_path, class: "dropdown-item" %>
       </li>
 
        <li classe="catego ">
-        Contact
+        <%= link_to "Contacts", pages_contact_path, class: "dropdown-item" %>
       </li>
       <!-- ci dessous un menu deroulant qui affiche les categories -->
       <!-- <li classe="categories">
