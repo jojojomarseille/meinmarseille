@@ -41,9 +41,11 @@
         <p> product: <%= booking.product_id%></p>
       </div>
 
-      <div>
+      <div class="card-product-infos2">
       <p> childs: <%=booking.childs%> </p>
-      <div class:"button"> payer </div>
+      <p> sku: <%=booking.sku%> </p>
+       <p>Amount: <%= humanized_money_with_symbol(booking.price) %></p>
+
     </div>
 
     </div>
