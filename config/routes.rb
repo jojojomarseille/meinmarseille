@@ -72,7 +72,7 @@ get 'pages/prix'
     resources :payments, only: :new
   end
 
-mount StripeEvent::Engine, at: 'http://localhost:40/stripe-webhooks'
+mount StripeEvent::Engine, at: '/stripe-webhooks'
 
 
 end
