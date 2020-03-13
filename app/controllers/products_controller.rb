@@ -63,7 +63,7 @@ skip_before_action :authenticate_user!, only: [:show, :index]
 
 
   def product_params
-  params.require(:product).permit( :title, :subtitle, :description, :price, :zone_id, :categorie_id, :photo)
+  params.require(:product).permit( :title, :subtitle, :description, :description2,:description3, :price, :zone_id, :categorie_id, :photo)
 end
 
 
