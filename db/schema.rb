@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_13_234906) do
+ActiveRecord::Schema.define(version: 2020_03_14_001017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -125,6 +125,10 @@ ActiveRecord::Schema.define(version: 2020_03_13_234906) do
     t.string "photo2", default: "https://www.mega-pc.net/wp-content/uploads/2019/08/image_cover-1.jpg"
     t.text "description2"
     t.text "description3"
+    t.boolean "childs"
+    t.boolean "lunch"
+    t.integer "duration"
+    t.integer "jauge"
     t.index ["categorie_id"], name: "index_products_on_categorie_id"
     t.index ["zone_id"], name: "index_products_on_zone_id"
   end
