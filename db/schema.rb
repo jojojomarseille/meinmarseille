@@ -122,7 +122,7 @@ ActiveRecord::Schema.define(version: 2020_03_14_001017) do
     t.integer "zone_id"
     t.string "photo"
     t.integer "price_cents", default: 0, null: false
-    t.string "photo2", default: "https://www.mega-pc.net/wp-content/uploads/2019/08/image_cover-1.jpg"
+    t.string "photo2", default: "https://media.routard.com/image/06/9/photo.1412069.jpg"
     t.text "description2"
     t.text "description3"
     t.boolean "childs"

@@ -1,14 +1,15 @@
 <%= form_tag "/products/#{@product.id}/bookings", method: "post" do %>
   <input type="string" name="comment" placeholder="commentaire"/>
   <input type="integer" name="participants" placeholder="nbr de participants" />
-  <input type="status" name="status" value= "0" />
+
   <input type="date" name="date" />
-  <input type="string" name="sku" placeholder="sku"/>
-  <input type="integer" name="price" placeholder="price"/>
-  <input type="integer" name="product_id" value="<%=@product.id%>" />
+  <input type="hidden" name="sku" value="booking<%=@product.id%>"/>
+  <input type="hidden" name="price" value="<%=@product.price%>"/>
+  <input type="hidden" name="product_id" value="<%=@product.id%>" />
   <input type="integer" name="childs" placeholder="childs" />
 
 
+<!-- <input type="hidden" name="status" value= "0" /> -->
 
 
   <input type="submit" value="soumettre la reservation" />
