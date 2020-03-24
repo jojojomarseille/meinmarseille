@@ -41,6 +41,9 @@
       <%= cl_image_tag un_produit.photo %>
       </a>
       <div class="card-body">
+        <p> <%= un_produit.subtitle %> </p>
+        <p> <%= un_produit.description %> </p>
+        <p> enfants? <%= un_produit.childs %> </p>
 
         <p class=" picto"> <a href="/products/<%= un_produit.id %>"><%= un_produit.title%></a> <%= image_tag "clock-circular-outline.png"%> Durée: 2h </p>
 

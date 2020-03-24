@@ -46,9 +46,9 @@ skip_before_action :authenticate_user!, only: [:show, :index]
 
   def update
     @product = Product.find(params[:id])
-    Product.find(params[:id]).update title: params[:title], subtitle: params[:subtitle], description: params[:description], price: params[:price], categorie_id: params[:categorie_id], zone_id: params[:zone_id], photo: params[:photo]
+    Product.find(params[:id]).update title: params[:title], subtitle: params[:subtitle], description: params[:description], description2: params[:description2], description3: params[:description3], childs: params[:childs], lunch: params[:lunch], duration: params[:duration], jauge: params[:jauge], price: params[:price], categorie_id: params[:categorie_id], zone_id: params[:zone_id], photo: params[:photo]
 
-    if @product.update title: params[:title], subtitle: params[:subtitle], description: params[:description], price: params[:price], categorie_id: params[:categorie_id], zone_id: params[:zone_id], photo: params[:photo]
+    if @product.update title: params[:title], subtitle: params[:subtitle], description: params[:description], description2: params[:description2], description3: params[:description3], childs: params[:childs], lunch: params[:lunch], duration: params[:duration], jauge: params[:jauge], price: params[:price], categorie_id: params[:categorie_id], zone_id: params[:zone_id], photo: params[:photo]
       redirect_to "/index_admin/#{params[:id]}"
     else
       render 'show'

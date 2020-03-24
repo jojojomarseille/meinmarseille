@@ -25,7 +25,15 @@
     <div class="col-sm-6">
       <h2> <%= @product.subtitle %> </h2>
 
-      <P> <%= @product.description %></P>
+      <P> description : <%= @product.description %></P>
+      <P> Description2:<%= @product.description2 %> </P>
+
+      <P> Description3:<%= @product.description3 %> </P>
+
+      <P> Adapté aux enfants?:<%= @product.childs %> </P>
+      <P> Repas?:<%= @product.lunch %> </P>
+      <P> Duration:<%= @product.duration %> </P>
+      <P> Jauge:<%= @product.jauge %> </P>
     </div>
 
     <div class="bloc-picto-2 col-sm-6">
@@ -52,16 +60,31 @@
 
       </div>
 
-
+<h2> Modifier la visitte </h2>
 
 
   <%= form_tag "/products/#{@product.id}", method: "patch" do %>
   <input type="text" name="title" value="<%= @product.title %>" />
   <input type="text" name="subtitle" value="<%= @product.subtitle %>" />
+
+  <p>Descriptions:</p>
   <input type="text" name="description" value="<%= @product.description %>" />
+  <input type="text" name="description2" value="<%= @product.description2 %>" />
+  <input type="text" name="description3" value="<%= @product.description3 %>" />
   <input type="text" name="price" value="<%= @product.price %>" />
+  <p>categorie:</p>
   <input type="text" name="categorie_id" value="<%= @product.categorie_id %>" />
+  <p>zone:</p>
   <input type="text" name="zone_id" value="<%= @product.zone_id %>" />
+  <p> Pictos </p>
+  <input type="boolean" name="childs" value="<%= @product.childs %>" />
+  <input type="boolean" name="lunch" value="<%= @product.lunch %>" />
+  <p> </p>
+  <input type="integer" name="duration" value="<%= @product.duration %>" />
+  <input type="integer" name="jauge" value="<%= @product.jauge %>" />
+
+  <input type="file" name=":photo" value="<%= @product.photo %>" />
+  <p> </p>
   <input type="submit" value="mettre a jour la visite" />
 <% end %>
 
