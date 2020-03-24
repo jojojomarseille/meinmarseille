@@ -1,2 +1,17 @@
 <h1> Zone admin </h1>
 
+<h2> menu </h2>
+
+<p>
+<%if current_user.admin %>
+            <%= link_to "creer un produit", new_product_path%>
+            <%= link_to "zone admin", "/admin" %>
+            <%= link_to "bookings a traiter", bookings_path %>
+            <%= link_to "demande de contacts", contacts_path %>
+            <%= link_to "categories", categories_path %>
+            <%= link_to "zones", zones_path %>
+            <%= link_to "visittes", index_admin_path%>
+<%else%>
+<%end%>
+
+</p>
