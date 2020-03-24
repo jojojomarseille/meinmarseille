@@ -14,6 +14,10 @@ class PagesController < ApplicationController
   end
 
   def zoneadmin
+    @user= User.all
+    @messages = Contact.all
+    @bookings = Booking.all
+    @visittes = Product.last(3)
   end
 
 end

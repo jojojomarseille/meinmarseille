@@ -2,7 +2,7 @@
 
 <h2> menu </h2>
 
-<p>
+
 <%if current_user.admin %>
             <%= link_to "creer un produit", new_product_path%>
             <%= link_to "zone admin", "/admin" %>
@@ -14,4 +14,36 @@
 <%else%>
 <%end%>
 
-</p>
+<h2> Metriques </h2>
+
+<p>Nombre d'utilisateurs:<%= @user.count %> </p>
+<p>Nombre de messages ouvert: <%= @messages.count %> </p>
+<p>Nombre de demande de reservation en attente: <%= @bookings.count %> </p>
+
+
+<h2> Visittes a venit </h2>
+
+<% @visittes.each do |product| %>
+    <div class="card-product">
+      <%= cl_image_tag product.photo %>
+
+      <div class="card-product-infos">
+        <h2>Visitte no <%= product.id%>: <%= product.title %></h2>
+        <p> <%= product.subtitle %> </p>
+        <p> <%= product.description %> </p>
+
+      </div>
+      <div class="card-product-infos2">
+
+         <%= form_tag "/index_admin/#{product.id}", method: "get" do %>
+          <input type="submit" class="btn btn-primary" value="voir la visitte" />
+          <% end %>
+        <%= form_tag "/products/#{product.id}", method: "delete" do %>
+          <input type="submit" class="btn btn-primary" value="Supprimer la visitte" />
+          <% end %>
+
+      </div>
+
+
+    </div>
+  <% end %>
