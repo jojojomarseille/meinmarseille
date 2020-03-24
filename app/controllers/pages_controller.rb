@@ -9,4 +9,8 @@ class PagesController < ApplicationController
  @user = current_user
   end
 
+  def prix
+    @visittes = Product.all
+  end
+
 end
