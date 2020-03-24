@@ -13,4 +13,7 @@ class PagesController < ApplicationController
     @visittes = Product.all
   end
 
+  def zoneadmin
+  end
+
 end

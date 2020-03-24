@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
 get 'pages/cgu'
 get 'pages/user'
+get 'pages/zoneadmin'
 get 'pages/contact'
 get 'pages/equipe'
 get 'pages/faq'
