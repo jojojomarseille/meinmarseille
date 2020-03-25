@@ -1,62 +1,62 @@
 
 
 <div class="container slider-container col-sm-10">
-    <div class="row">
 
-      <div class="slider col-sm-12">
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                  <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselExampleControls" data-slide-to="1"></li>
-                  <li data-target="#carouselExampleControls" data-slide-to="2"></li>
-              </ol>
-          <div class="carousel-inner">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleControls" data-slide-to="1"></li>
+            <li data-target="#carouselExampleControls" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner">
             <div class="carousel-item active">
-              <%= image_tag "mein-marseille_slide1.png" %>
+              <%= image_tag "slider.png" %>
             </div>
             <div class="carousel-item">
               <%= image_tag "mein-marseille_slide1.png" %>
             </div>
             <div class="carousel-item">
-             <%= image_tag "mein-marseille_slide1.png" %>
+              <%= image_tag "mein-marseille_slide1.png" %>
             </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        </div>
+
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
-          </a>
-        </div>
-      </div>
+        </a>
     </div>
+</div>
 
-  <div class="cards">
+
+
+<div class="cards col-sm-12">
 
     <% @les_produits.each do |un_produit| %>
-    <div class="card " style="width: 40rem;">
-      <a href="/products/<%= un_produit.id %>">
-      <%= cl_image_tag un_produit.photo %>
-      </a>
+    <div class="card">
+      <div class="card-pic">
+        <a href="/products/<%= un_produit.id %>">
+        <%= cl_image_tag un_produit.photo %>
+        </a>
+      </div>
       <div class="card-body">
+        <h3> <%= un_produit.title %> </h3>
         <p> <%= un_produit.subtitle %> </p>
         <p> <%= un_produit.description %> </p>
         <p> enfants? <%= un_produit.childs %> </p>
-
         <p class=" picto"> <a href="/products/<%= un_produit.id %>"><%= un_produit.title%></a> <%= image_tag "clock-circular-outline.png"%> Durée: 2h </p>
-
       </div>
     </div>
     <% end %>
 
+</div>
 
-  </div>
   <p><%= paginate @les_produits %></p>
 
-
-</div>
 
 
 
