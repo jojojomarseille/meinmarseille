@@ -1,28 +1,24 @@
-<div class="container">
-
+<div class="container col-sm-12">
 
 
   <div class="row">
-    <div class="product-card col-sm-12">
-      <div class=" bloc-photo col-sm-12 ">
+
+    <div class="product-card ">
+      <div class=" bloc-photo  ">
         <%= cl_image_tag @product.photo %>
         <h1> <%=@product.title%><%=@product.id%></h1>
-
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          Reserver
+        </button>
       </div>
-
-      <div class="row pictos">
-
-          <p class=" bloc-1 col-sm-4"> <%= image_tag "clock-circular-outline.png"%> Durée: 2h </p>
-          <P class=" bloc-2 col-sm-4"> <%= image_tag "user.png"%>Nombre de participants: 5 </P>
-          <p class="bloc-3 col-sm-4"> Prix: 50€/ personne</p>
-
-      </div>
-
     </div>
   </div>
 
+
   <div class="row description">
-    <div class="col-sm-6">
+
+    <div class="description1 col-sm-7">
+
       <h2> <%= @product.subtitle %> </h2>
 
       <P> Description 1<%= @product.description %> </P>
@@ -31,43 +27,56 @@
 
       <P> Description3:<%= @product.description3 %> </P>
 
-      <P> Adapté aux enfants?:<%= @product.childs %> </P>
-      <P> Repas?:<%= @product.lunch %> </P>
-      <P> Duration:<%= @product.duration %> </P>
-      <P> Jauge:<%= @product.jauge %> </P>
+       <%= cl_image_tag @product.photo %>
+
+
     </div>
 
-    <div class="bloc-picto-2 col-sm-6">
+
+
+
+
+    <div class="bloc-picto-2 col-sm-5">
       <li>
         <ul> <%= image_tag "expert-route.png"%> Dificutée: intermediaire </ul>
-        <ul> <%= image_tag "multiple-users-silhouette.png"%> Participants max : 10 personnes </ul>
-        <ul> <%= image_tag "smiling-baby.png"%> Enfants: oui </ul>
+        <ul> <%= image_tag "multiple-users-silhouette.png"%> Participants max : <%= @product.jauge %> personnes </ul>
+        <ul> <%= image_tag "smiling-baby.png"%> Enfants: <%= @product.childs %> </ul>
+        <ul> <%= image_tag "expert-route.png"%> repas: <%= @product.lunch %> </ul>
+        <ul> <%= image_tag "expert-route.png"%> Duration: <%= @product.duration %> </ul>
       </li>
 
+
+      <div class="Practish">
+        <h3>Practish</h3>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+      </div>
+
+      <div class="Tips">
+        <h3>Tips</h3>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+      </div>
+
       <div class="pricegrid">
-
-      <h5> Tarif par personne </h5>
-      <div class="row">
-      <div class="col-md-4 case ">1 - 5</div>
-      <div class="col-md-4 case">6 - 10</div>
-      <div class="col-md-4 case">+ de 10</div>
-      </div>
-
-      <div class="row">
-      <div class="col-md-4 case"><%=@product.price%></div>
-      <div class="col-md-4 case"><%=@price2%></div>
-      <div class="col-md-4 case"><%=@price3%></div>
-      </div>
-
+        <h5> Tarif par personne </h5>
+        <div class="row">
+          <div class="col-md-4 case ">1 - 5</div>
+          <div class="col-md-4 case">6 - 10</div>
+          <div class="col-md-4 case">+ de 10</div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 case"><%=@product.price%></div>
+          <div class="col-md-4 case"><%=@price2%></div>
+          <div class="col-md-4 case"><%=@price3%></div>
+        </div>
       </div>
 
 
 
 
 
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Reserver
-    </button>
+      <button type="button" id= "btn2" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Reserver
+      </button>
     </div>
 
 <% if user_signed_in? %>

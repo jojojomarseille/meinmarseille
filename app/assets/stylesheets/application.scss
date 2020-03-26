@@ -42,11 +42,29 @@ li {
   list-style-type: none;
 }
 
-.bloc-photo {
+//page swow de product
 
-  margin-left: -30px;
-  height: 500px;
-  padding-bottom: 10px;
+.container{
+  width: 1348px;
+}
+
+.product-card{
+  width: 1348px;
+  height: 564px;
+}
+
+
+.product-card h1 {
+  margin-top: -300px;
+  margin-left: 50px;
+  color: white;
+  font-size: 100px;
+}
+
+
+.bloc-photo {
+  height: 100%;
+  width: 100%;
 }
 
 
@@ -70,21 +88,33 @@ li {
 }
 
 .description {
+text-align: justify;
 padding-top: 30px;
 }
 
+.description h2 {
+text-align: center;
+padding: 15px;
+}
+
+.description p {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+
+.description1 img{
+  width: 100%;
+}
 
 .bloc-picto-2 img {
   height: 30px;
 }
 
-
-.product-card h1 {
-  margin-top: -300px;
-  margin-left: 50px;
-  color: white;
-  font-size: 100px;
+#btn2 {
+  width: 100%;
 }
+
 
 .row {
   width:100%;
@@ -94,6 +124,23 @@ padding-top: 30px;
 .yield {
   margin-top: 150px;
 }
+
+// pour la grille de prix de la show de product//
+
+.pricegrid {
+  background-color: lightgray;
+  text-align: center;
+  margin-bottom: 30px;
+
+}
+
+.case {
+  //box-shadow: 0 0 15px rgba(0,0,0,0.2)
+  border: 1px solid grey;
+}
+
+
+
 .pagination {
     border-left: 1px solid #ddd;
     .first{
@@ -164,16 +211,3 @@ padding-top: 30px;
   margin-right: 50px;
 }
 
-// pour la grille de prix de la show de product//
-
-.pricegrid {
-  background-color: lightgray;
-  text-align: center;
-  margin-bottom: 30px;
-
-}
-
-.case {
-  //box-shadow: 0 0 15px rgba(0,0,0,0.2)
-  border: 1px solid grey;
-}
