@@ -41,7 +41,7 @@
 
         <div class="card-pic">
           <a href="/products/<%= un_produit.id %>">
-          <%= cl_image_tag un_produit.photo %>
+          <%= cl_image_tag un_produit.photo , crop: :fill %>
           </a>
         </div>
 
