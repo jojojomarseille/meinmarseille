@@ -42,12 +42,26 @@
   text-align: justify;
 }
 
+.card-body h2 {
+  display: block;/* or inline-block */
+  overflow: hidden;
+  max-height: 1.3em;
+  line-height: 1.3em;
+}
+
+.card-body h3 {
+  display: block;/* or inline-block */
+  overflow: hidden;
+  max-height: 1.3em;
+  line-height: 1.3em;
+}
+
 .shortdescription{
   margin-top: 25px;
   display: block;/* or inline-block */
   word-wrap: overflow-wrap;
   overflow: hidden;
-  max-height: 9em;
+  max-height: 7.5em;
   line-height: 1.5em;
 
 }
