@@ -11,7 +11,9 @@
 
         <div class="carousel-inner">
             <div class="carousel-item active">
-              <%= image_tag "mein-marseille_slide1.png" %>
+              <a href="/products/50">
+                <%= image_tag "mein-marseille_slide1.png" %>
+              </a>
             </div>
             <div class="carousel-item">
               <%= image_tag "slider.png" %>
@@ -41,7 +43,7 @@
 
         <div class="card-pic">
           <a href="/products/<%= un_produit.id %>">
-          <%= cl_image_tag un_produit.photo , crop: :fill %>
+          <%= cl_image_tag un_produit.photo,crop: :fill%>
           </a>
         </div>
 
