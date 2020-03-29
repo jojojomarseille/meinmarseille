@@ -37,22 +37,36 @@
 <div class="cards col-sm-12">
 
     <% @les_produits.each do |un_produit| %>
-    <div class="card">
-      <div class="card-pic">
-        <a href="/products/<%= un_produit.id %>">
-        <%= cl_image_tag un_produit.photo %>
-        </a>
-      </div>
-      <div class="card-body">
-        <h3> <%= un_produit.title %> </h3>
-        <p> <%= un_produit.subtitle %> </p>
-        <p> <%= un_produit.description %> </p>
-        <p> enfants? <%= un_produit.childs %> </p>
-        <p class=" picto"> <a href="/products/<%= un_produit.id %>"><%= un_produit.title%></a> <%= image_tag "clock-circular-outline.png"%> Durée: 2h </p>
-      </div>
-    </div>
-    <% end %>
+      <div class="card">
 
+        <div class="card-pic">
+          <a href="/products/<%= un_produit.id %>">
+          <%= cl_image_tag un_produit.photo %>
+          </a>
+        </div>
+
+        <div class="card-body">
+          <h2> <%= un_produit.title %> </h2>
+          <h3> <%= un_produit.subtitle %> </h3>
+          <p> <%= un_produit.description %> </p>
+
+          <div class="bottomcard">
+            <div class="picto">
+              <p><%= image_tag "smiling-baby.png"%>enfants: <%= un_produit.childs %> </p>
+              <p><%= image_tag "clock-circular-outline.png"%> Durée: <%= un_produit.duration%> </p>
+            </div>
+
+            <div class="productbutton">
+              <a href="/products/<%= un_produit.id %>">
+                <button type="button" class="btn btn-primary">En voir plus</button>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    <% end %>
 </div>
 
   <p><%= paginate @les_produits %></p>

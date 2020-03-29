@@ -34,10 +34,50 @@
   width: 50%;
   margin-right: 0px;
   text-align: center;
+  position:relative;
 
 }
 
-.picto img{
+.card-body p{
+text-align: justify;
+}
+
+
+
+.bottomcard {
+  position: absolute;
+  bottom: 0;
+  left:0;
+  margin:20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 70px;
+  width: 95%;
+}
+
+.picto {
+  justify-content: vertical;
+  height: 100%;
+
+}
+
+
+.productbutton {
+  position: relative;
+  height: 100%;
+  width: 150px
+}
+
+.btn {
+position: absolute;
+bottom: 0;
+right:0;
+}
+
+
+
+.bottomcard img{
   height: 20px;
   width: 20px;
 }
