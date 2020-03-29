@@ -48,8 +48,9 @@
         <div class="card-body">
           <h2> <%= un_produit.title %> </h2>
           <h3> <%= un_produit.subtitle %> </h3>
-          <p> <%= un_produit.description %> </p>
-
+          <div class="shortdescription">
+            <p> <%= un_produit.description %> </p>
+          </div>
           <div class="bottomcard">
             <div class="picto">
               <p>Enfants: <%= un_produit.childs %> </p>

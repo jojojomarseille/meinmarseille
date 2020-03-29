@@ -39,7 +39,17 @@
 }
 
 .card-body p{
-text-align: justify;
+  text-align: justify;
+}
+
+.shortdescription{
+  margin-top: 25px;
+  display: block;/* or inline-block */
+  word-wrap: overflow-wrap;
+  overflow: hidden;
+  max-height: 9em;
+  line-height: 1.5em;
+
 }
 
 
