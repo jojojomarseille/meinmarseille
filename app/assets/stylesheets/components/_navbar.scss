@@ -10,13 +10,11 @@ border-bottom: solid $light-gray 1px;
 }
 
 .navbar-categories-list {
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .navbar-categories-list li {
   margin-right: 25px;
-  margin_left: 5px;
-
 }
 
 
@@ -37,10 +35,12 @@ text-color: none !important;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 100px;
+  width: 70px;
+  margin-left: 20px;
 }
 
-.nav-item img {
-  width: 40px;
+.avatar {
+  width: 80px;
+  margin-right: 10px;
 }
 
