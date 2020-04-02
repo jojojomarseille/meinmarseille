@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_14_001017) do
+ActiveRecord::Schema.define(version: 2020_04_01_155912) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -122,7 +122,6 @@ ActiveRecord::Schema.define(version: 2020_03_14_001017) do
     t.integer "zone_id"
     t.string "photo"
     t.integer "price_cents", default: 0, null: false
-    t.string "photo2", default: "https://media.routard.com/image/06/9/photo.1412069.jpg"
     t.text "description2"
     t.text "description3"
     t.boolean "childs"

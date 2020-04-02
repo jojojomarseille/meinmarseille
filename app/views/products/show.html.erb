@@ -6,10 +6,11 @@
     <div class="product-card ">
       <div class=" bloc-photo  ">
         <%= cl_image_tag @product.photo %>
-        <h1> <%=@product.title%><%=@product.id%></h1>
+
+        <h1> <%=@product.title%> </h1>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-          Reserver
-        </button>
+        Reserver
+      </button>
       </div>
     </div>
   </div>
@@ -37,13 +38,21 @@
 
 
     <div class="bloc-picto-2 col-sm-5">
-      <li>
-        <ul> <%= image_tag "expert-route.png"%> Dificutée: intermediaire </ul>
-        <ul> <%= image_tag "multiple-users-silhouette.png"%> Participants max : <%= @product.jauge %> personnes </ul>
-        <ul> <%= image_tag "smiling-baby.png"%> Enfants: <%= @product.childs %> </ul>
-        <ul> <%= image_tag "expert-route.png"%> repas: <%= @product.lunch %> </ul>
-        <ul> <%= image_tag "expert-route.png"%> Duration: <%= @product.duration %> </ul>
-      </li>
+
+      <div class="bloc-picto-3">
+        <div class="groupepictos1">
+          <li>
+            <ul> <i class="fas fa-hiking"></i> Dificutée: intermediaire </ul>
+            <ul> <i class="fas fa-users"></i> Participants max : <%= @product.jauge %> personnes </ul>
+          </li>
+        </div>
+        <div class="grouppictos2">
+          <li>
+            <ul> <i class="fas fa-child"></i> Enfants: <%= @product.childs %> </ul>
+            <ul> <i class="fas fa-clock"></i> Duration: <%= @product.duration %> </ul>
+          </li>
+        </div>
+      </div>
 
 
       <div class="Practish">
@@ -57,16 +66,16 @@
       </div>
 
       <div class="pricegrid">
-        <h5> Tarif par personne </h5>
+        <h3> Tarif par personne </h3>
         <div class="row">
           <div class="col-md-4 case ">1 - 5</div>
           <div class="col-md-4 case">6 - 10</div>
           <div class="col-md-4 case">+ de 10</div>
         </div>
         <div class="row">
-          <div class="col-md-4 case"><%=@product.price%></div>
-          <div class="col-md-4 case"><%=@price2%></div>
-          <div class="col-md-4 case"><%=@price3%></div>
+          <div class="col-md-4 case"><%=@product.price%>€</div>
+          <div class="col-md-4 case"><%=@price2%>€</div>
+          <div class="col-md-4 case"><%=@price3%>€</div>
         </div>
       </div>
 
@@ -139,10 +148,9 @@
 <section class="mb-4">
 
     <!--Section heading-->
-    <h2 class="h1-responsive font-weight-bold text-center my-4">Contactez-nous</h2>
+    <h3 class="h1-responsive font-weight-bold text-center my-4">Vous avez une question? Contactez-nous</h3>
     <!--Section description-->
-    <p class="text-center w-responsive mx-auto mb-5">Si vous avez la moindre question,n'hesitez pas a nous contacter directement. Notre equipe reviendra vers vous aussi vite que possible
-    </p>
+
 
     <p class="text-center w-responsive mx-auto mb-5"> <%= render "contacts/form" %> </p>
 
