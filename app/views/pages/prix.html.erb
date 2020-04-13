@@ -1,22 +1,33 @@
-<h1> Prix </h1>
+
+  <div class="row">
+
+  <div class="prixtop">
+    <%= image_tag "header-page-prix.png"  %>
+    <h1> Prix </h1>
+
+  </div>
+</div>
+
+<div class="row pricetable">
 
 <table>
   <tr>
-    <th>Visittes</th>
-    <th>1 - 5 participants</th>
-    <th>6 - 10 Participants</th>
-    <th>11 - 15  participants</th>
+    <th class=" case2 "></th>
+    <th class=" case2 ">1 - 5 participants</th>
+    <th class=" case2 ">6 - 10 participants</th>
+    <th class=" case2 ">11 - 15 participants</th>
   </tr>
   <tr>
 
   <% @visittes.each do |visite| %>
-      <td><%= visite.title%></td>
-      <td><%= visite.price%></td>
-      <td><%= visite.price*1.15 %></td>
-      <td><%= visite.price*1.30 %></td>
+      <td class=" case2 casetitle "><%= visite.title%></td>
+      <td class=" case2 "><%= visite.price%></td>
+      <td class=" case2 "><%= visite.price*1.15 %></td>
+      <td class=" case2 "><%= visite.price*1.30 %></td>
     </tr>
 
   <% end%>
 </table>
+</div>
 
 
