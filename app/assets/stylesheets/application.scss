@@ -139,6 +139,7 @@ padding: 15px;
 
 .Practish {
   height: 350px;
+  // en attente : border: 2px solid #15f2c9;
 
 }
 
@@ -328,6 +329,7 @@ margin-bottom: 50px;
 .texteprojet {
  width: 60%;
  margin: auto;
+ text-align: justify;
 
 margin-bottom: 50px;
 }
@@ -358,12 +360,12 @@ margin-bottom: 50px;
 .corpequipe {
  width: 60%;
  margin: auto;
-margin-bottom: 50px;
+margin-bottom: 20px;
 }
 
 .corpequipe1 {
-  height: 500px;
-  margin-top: 50px;
+  height: 400px;
+  margin-top: 20px;
 }
 
 .corpequipe1 img {
@@ -376,8 +378,16 @@ margin-bottom: 50px;
   transform: rotate(90deg);
 }
 
-.pres1 {
-  margin-top: 0;
+
+.corpequipe2 {
+  height: 400px;
+
+}
+
+.corpequipe1 img {
+  height: 300px;
+  width: 350px;
+
 }
 
 //page contact
@@ -423,4 +433,32 @@ margin-bottom: 50px;
   font-size: 100px;
   font-weight: bold;
   color: white;
+}
+
+.questioncard{
+
+  height: 300px;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 50px;
+  padding: 0px;
+}
+
+.questioncardtext {
+text-align: justify;
+padding: 15px;
+}
+
+.questioncardtext h2 {
+  text-align: center;
+}
+
+.questioncardpics {
+
+  height: 100%;
+}
+
+.questioncardpics img {
+  height: 100%;
+  width: 100%;
 }
