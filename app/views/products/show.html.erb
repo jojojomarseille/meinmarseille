@@ -20,18 +20,19 @@
 
     <div class="description1 col-sm-7">
 
-      <h2> <%= @product.subtitle %> </h2>
+      <h2> <%= markdown(@product.subtitle) %> </h2>
 
-      <P> Description 1<%= @product.description %> </P>
-
-      <P> Description2:<%= @product.description2 %> </P>
-
-      <P> Description3:<%= @product.description3 %> </P>
-
-       <%= cl_image_tag @product.photo %>
+      <P><%= markdown(@product.description) %> </P>
 
 
     </div>
+
+      <!-- <P> Description3:<%= @product.description3 %> </P> -->
+
+
+
+
+
 
 
 
@@ -57,13 +58,13 @@
 
       <div class="Practish">
         <h3>Practish</h3>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+        <p> <%= markdown(@product.description2) %> </p>
       </div>
-
-      <div class="Tips">
+      <!-- plus besoin de l'encarts tips, ci dessous , qui faisait doublon avec practish -->
+      <!-- <div class="Tips">
         <h3>Tips</h3>
         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-      </div>
+      </div> -->
 
       <div class="pricegrid">
         <h3> Tarif par personne </h3>
@@ -136,9 +137,32 @@
 
 <% end %>
 
+<div class=" row fotorow">
 
-
+  <div class="barreseparation">
   </div>
+
+    <div class="fotogalerie">
+
+      <div class="fotoelement">
+       <%= cl_image_tag @product.photo %>
+      </div>
+      <div class="fotoelement">
+       <%= cl_image_tag @product.photo %>
+      </div>
+      <div class="fotoelement">
+       <%= cl_image_tag @product.photo %>
+      </div>
+      <div class="fotoelement">
+       <%= cl_image_tag @product.photo %>
+      </div>
+
+
+    </div>
+ </div>
+
+</div>
+
 
 
 

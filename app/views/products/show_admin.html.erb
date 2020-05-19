@@ -10,79 +10,43 @@
 
       </div>
 
-      <div class="row pictos">
 
-          <p class=" bloc-1 col-sm-4"> <%= image_tag "clock-circular-outline.png"%> Durée: 2h </p>
-          <P class=" bloc-2 col-sm-4"> <%= image_tag "user.png"%>Nombre de participants: 5 </P>
-          <p class="bloc-3 col-sm-4"> Prix: 50€/ personne</p>
-
-      </div>
 
     </div>
   </div>
 
-  <div class="row description">
-    <div class="col-sm-6">
-      <h2> <%= @product.subtitle %> </h2>
-
-      <P> description : <%= @product.description %></P>
-      <P> Description2:<%= @product.description2 %> </P>
-
-      <P> Description3:<%= @product.description3 %> </P>
-
-      <P> Adapté aux enfants?:<%= @product.childs %> </P>
-      <P> Repas?:<%= @product.lunch %> </P>
-      <P> Duration:<%= @product.duration %> </P>
-      <P> Jauge:<%= @product.jauge %> </P>
-    </div>
-
-    <div class="bloc-picto-2 col-sm-6">
-      <li>
-        <ul> <%= image_tag "expert-route.png"%> Dificutée: intermediaire </ul>
-        <ul> <%= image_tag "multiple-users-silhouette.png"%> Participants max : 10 personnes </ul>
-        <ul> <%= image_tag "smiling-baby.png"%> Enfants: oui </ul>
-      </li>
-
-      <div class="pricegrid">
-
-      <h5> Tarif par personne </h5>
-      <div class="row">
-      <div class="col-md-4 case ">1 - 5</div>
-      <div class="col-md-4 case">6 - 10</div>
-      <div class="col-md-4 case">+ de 10</div>
-      </div>
-
-      <div class="row">
-      <div class="col-md-4 case"><%=@product.price%></div>
-      <div class="col-md-4 case"><%=@price2%></div>
-      <div class="col-md-4 case"><%=@price3%></div>
-      </div>
-
-      </div>
-
-<h2> Modifier la visitte </h2>
+  <div class="row modifications">
+    <div class="col-sm-12">
+     <h2> Modifier la visitte </h2>
 
 
   <%= form_tag "/products/#{@product.id}", method: "patch" do %>
-  <input type="text" name="title" value="<%= @product.title %>" />
-  <input type="text" name="subtitle" value="<%= @product.subtitle %>" />
+  <p> Titre: </p>
+  <input type="text" class="modificationsfields" name="title" value="<%= @product.title %>" />
+  <p> Sous-titre: </p>
+  <input type="text" class="modificationsfields" name="subtitle" value="<%= @product.subtitle %>" />
 
-  <p>Descriptions:</p>
-  <input type="text" name="description" value="<%= @product.description %>" />
-  <input type="text" name="description2" value="<%= @product.description2 %>" />
-  <input type="text" name="description3" value="<%= @product.description3 %>" />
-  <input type="text" name="price" value="<%= @product.price %>" />
+  <p>Description:</p>
+  <input id="modifdescription" class="modificationsfields" type="textarea" name="description" value="<%= @product.description %>" />
+  <p>Practish:</p>
+  <input type="text" class="modificationsfields" name="description2" value="<%= @product.description2 %>" />
+  <p>Prix:</p>
+  <input type="text" class="modificationsfields" name="price" value="<%= @product.price %>" />
   <p>categorie:</p>
-  <input type="text" name="categorie_id" value="<%= @product.categorie_id %>" />
+  <input type="text" class="modificationsfields" name="categorie_id" value="<%= @product.categorie_id %>" />
   <p>zone:</p>
-  <input type="text" name="zone_id" value="<%= @product.zone_id %>" />
-  <p> Pictos </p>
-  <input type="boolean" name="childs" value="<%= @product.childs %>" />
-  <input type="boolean" name="lunch" value="<%= @product.lunch %>" />
-  <p> </p>
+  <input type="text" class="modificationsfields" name="zone_id" collection="<%= @zones %>" value="<%= @product.zone_id %>" />
+  <p> Enfants acceptés?
+  <input type="checkbox" name="childs" value="<%= @product.childs %>" />
+  </p>
+  <p> Repas inclus?
+  <input type="checkbox" name="lunch" value="<%= @product.lunch %>" />
+  </p>
+  <p>Durée en minutes :</p>
   <input type="integer" name="duration" value="<%= @product.duration %>" />
+  <p> Nombre de participants maximum </p>
   <input type="integer" name="jauge" value="<%= @product.jauge %>" />
-
+  <P> Photos</P>
   <input type="file" name=":photo" value="<%= @product.photo %>" />
   <p> </p>
   <input type="submit" value="mettre a jour la visite" />
@@ -92,5 +56,13 @@
 <%= form_tag "/products/#{@product.id}", method: "delete" do %>
  <input type="submit" class="btn btn-primary" value="Supprimer la visitte" />
           <% end %>
+
+
+    </div>
+
+
+
+
+
 
 </div>

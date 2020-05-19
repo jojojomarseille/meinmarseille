@@ -13,4 +13,7 @@ def categories_load
     #la on charge les diex premiers produits pour le menu de la navbar
 end
 
+include MarkdownHelper
+
+
 end

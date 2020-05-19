@@ -99,12 +99,15 @@ li {
 
 .description {
 text-align: justify;
-padding-top: 30px;
+padding-top: 70px;
+
+height: 1000px;
 }
 
 .description h2 {
 text-align: center;
-padding: 15px;
+padding-bottom: 20px;
+
 }
 
 .description p {
@@ -138,7 +141,7 @@ padding: 15px;
 }
 
 .Practish {
-  height: 350px;
+  height: 500px;
   // en attente : border: 2px solid #15f2c9;
 
 }
@@ -175,6 +178,7 @@ padding: 15px;
 .pricegrid {
   text-align: center;
   margin-bottom: 30px;
+  margin-top: 80px;
 }
 
 .pricegrid h3 {
@@ -187,7 +191,38 @@ padding: 15px;
 
 }
 
+.fotogalerie {
 
+  display: flex;
+  width: 100%;
+  margin: auto;
+}
+
+.fotoelement {
+  margin: auto;
+  height: 350px;
+  width: 300px;
+}
+
+.barreseparation {
+  width: 100%;
+  border-bottom: 1px solid black;
+  padding-top: 20px;
+  margin-bottom: 30px;
+}
+
+
+// page show product admin
+
+.modificationsfields {
+  width: 100%;
+
+}
+
+#modifdescription {
+
+
+}
 
 
 
