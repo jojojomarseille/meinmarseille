@@ -40,8 +40,14 @@ skip_before_action :authenticate_user!, only: [:show, :index]
 
   def create
     #@categories = Categorie.all
-    product = Product.create(product_params)
-    redirect_to "/products"
+     @product = Product.create(product_params)
+      if @product.save
+          # CALL THE create_pictures METHOD AFTER @product.save
+          create_pictures
+          redirect_to product_path(@product)
+      else
+          render :new
+      end
   end
 
   def update
@@ -63,8 +69,17 @@ skip_before_action :authenticate_user!, only: [:show, :index]
 
 
   def product_params
-  params.require(:product).permit( :title, :subtitle, :description, :description2, :childs, :lunch, :jauge, :duration, :description3, :price, :zone_id, :categorie_id, photos: [])
-end
+    params.require(:product).permit( :title, :subtitle, :description, :description2, :childs, :lunch, :jauge, :duration, :description3, :price, :zone_id, :categorie_id, :photo)
+  end
 
+  private
+
+ def create_pictures
+    photos = params.dig(:product, :pictures) || []
+    photos.each do |photo|
+    @product.pictures.create(photo: photo)
+  end
+
+end
 
 end

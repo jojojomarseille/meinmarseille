@@ -144,10 +144,10 @@
 
     <div class="fotogalerie">
 
-      <% @product.photos.each do |photo| %>
+      <% @product.pictures.each do |picture| %>
 
       <div class="fotoelement">
-       <%= cl_image_tag photo.key, crop: :fill %>
+       <%= cl_image_tag(picture.photo, crop: :fill ) %>
       </div>
 
       <% end %>
