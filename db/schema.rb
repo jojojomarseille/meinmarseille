@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_14_001017) do
+ActiveRecord::Schema.define(version: 2020_05_27_000311) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -129,6 +129,7 @@ ActiveRecord::Schema.define(version: 2020_03_14_001017) do
     t.boolean "lunch"
     t.integer "duration"
     t.integer "jauge"
+    t.string "photos"
     t.index ["categorie_id"], name: "index_products_on_categorie_id"
     t.index ["zone_id"], name: "index_products_on_zone_id"
   end

@@ -462,6 +462,14 @@ margin-bottom: 20px;
 
 }
 
+.rotation270 {
+   -webkit-transform: rotate(270deg);
+   -moz-transform: rotate(270deg);
+   -ms-transform: rotate(270deg);
+   -o-transform: rotate(270deg);
+   transform: rotate(270deg);
+ }
+
 .faqtop img {
   width: 100%;
   height: 100%;

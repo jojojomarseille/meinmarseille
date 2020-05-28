@@ -144,19 +144,23 @@
 
     <div class="fotogalerie">
 
+      <% @product.photos.each do |photo| %>
+
       <div class="fotoelement">
-       <%= cl_image_tag @product.photo %>
-      </div>
-      <div class="fotoelement">
-       <%= cl_image_tag @product.photo %>
-      </div>
-      <div class="fotoelement">
-       <%= cl_image_tag @product.photo %>
-      </div>
-      <div class="fotoelement">
-       <%= cl_image_tag @product.photo %>
+       <%= cl_image_tag photo.key, crop: :fill %>
       </div>
 
+      <% end %>
+   <!--    <div class="fotoelement">
+       <%= cl_image_tag @product.photo %>
+      </div>
+      <div class="fotoelement">
+       <%= cl_image_tag @product.photo %>
+      </div>
+      <div class="fotoelement">
+       <%= cl_image_tag @product.photo %>
+      </div>
+ -->
 
     </div>
  </div>
