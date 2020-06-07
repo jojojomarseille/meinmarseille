@@ -2,11 +2,15 @@
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
+@import "glider.min.scss";
+@import "glider.theme.min.scss";
 
 // External libraries
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+
 
 // Your CSS partials
 @import "components/index";
@@ -194,7 +198,7 @@ padding-bottom: 20px;
 .fotogalerie {
 
   display: flex;
-  width: 100%;
+
   margin: auto;
 }
 

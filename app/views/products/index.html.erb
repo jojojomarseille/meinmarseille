@@ -34,8 +34,6 @@
     </div>
 
 
-
-
 <div class="cards col-sm-12">
 
     <% @les_produits.each do |un_produit| %>
@@ -51,7 +49,7 @@
           <h2> <%= markdown(un_produit.title) %> </h2>
           <h3> <%= markdown(un_produit.subtitle) %> </h3>
           <div class="shortdescription">
-            <p> <%= markdown(un_produit.description) %> </p>
+            <p> <%= markdown(un_produit.description3) %> </p>
           </div>
           <div class="bottomcard">
             <div class="picto">
