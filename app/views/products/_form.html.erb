@@ -31,6 +31,8 @@ form qui fonctionne avec la photo:
         <div class="typo"> <%= f.input :categorie_id, collection:@categories , label: false %> </div>
         <p> photo du header et de la mignature </p>
         <%= f.input :photo, as: :file %>
+
+
         <p> Photos supplementaires pour la gallerie (minimum 3)</p>
         <%= f.input :pictures, as: :file, input_html: { multiple: true } %>
 

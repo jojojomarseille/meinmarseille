@@ -147,7 +147,34 @@
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
             <% @product.pictures.each do |picture| %>
-              <li class="glide__slide fotoelement"><%= cl_image_tag(picture.photo) %></li>
+              <li class="glide__slide fotoelement" data-toggle="modal" data-target="#photoModal<%= picture.id%>"><%= cl_image_tag(picture.photo) %></li>
+
+
+                  <div class="modal " id="photoModal<%= picture.id %>"  role="dialog">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="photoModal<%= picture.id %>Label">coucou</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <%= cl_image_tag(picture.photo) %>
+                          </div>
+                      </div>
+                    </div>
+               </div>
+
+
+
+
+
+
+
+
+
+
             <% end %>
           </ul>
         </div>
@@ -159,6 +186,10 @@
   </div>
 <% else %>
 <% end %>
+
+
+
+
 
 <!-- ci dessous le formulaire de contact -->
   <div class="row formulaire">

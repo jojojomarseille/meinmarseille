@@ -39,7 +39,7 @@
   <p>zone:</p>
   <input type="text" class="modificationsfields" name="zone_id" collection="<%= @zones %>" value="<%= @product.zone_id %>" />
   <p> Enfants acceptés?
-  <input type="checkbox" name="childs" value="<%= @product.childs %>" />
+  <input type="checkbox"  name="childs" value="<%= @product.childs %>" />
   </p>
   <p> Repas inclus?
   <input type="checkbox" name="lunch" value="<%= @product.lunch %>" />
@@ -48,23 +48,34 @@
   <input type="integer" name="duration" value="<%= @product.duration %>" />
   <p> Nombre de participants maximum </p>
   <input type="integer" name="jauge" value="<%= @product.jauge %>" />
-  <P> Photos</P>
-  <input type="file" name=":photo" value="<%= @product.photo %>" />
+  <h3> Photos</h3>
+  <p> photo de header actuelle:
+  <div class=" miniphoto ">
+        <%= cl_image_tag @product.photo %>
+      </div>
+  </p>
+
+  <input type="file" name="photo" value="<%= @product.photo %>" />
   <p> </p>
-  <input type="submit" value="mettre a jour la visite" />
+
+   <p> Photos supplementaires pour la gallerie (minimum 3)</p>
+   <input  type="file" :pictures, input_html: { multiple: true } %>
+
+    <p>
+        <br/>
+      <input type="submit" value="mettre a jour la visite" />
+    </p>
 <% end %>
 
-
-<%= form_tag "/products/#{@product.id}", method: "delete" do %>
- <input type="submit" class="btn btn-primary" value="Supprimer la visitte" />
-          <% end %>
-
+  <p>
+      <br/>
+      <%= form_tag "/products/#{@product.id}", method: "delete" do %>
+       <input type="submit" class="btn btn-primary" value="Supprimer la visitte" />
+                <% end %>
+  </p>
 
     </div>
 
 
-
-
-
-
+</div>
 </div>

@@ -1,5 +1,6 @@
 import "bootstrap";
 
+
 new Glide('.glide', {
   type: 'carousel',
   perView: 3,
@@ -22,3 +23,4 @@ import Glide from '@glidejs/glide'
 //   startAt: 0,
 //   perView: 4
 // }).mount()
+

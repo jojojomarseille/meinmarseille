@@ -230,9 +230,17 @@ padding-bottom: 20px;
 
 #modifdescription {
 
-
 }
 
+.miniphoto {
+  width: 60px;
+  height: 30px;
+}
+
+.miniphoto img {
+  width: 100%;
+  height: 100%;
+}
 
 
 
@@ -350,8 +358,8 @@ margin-bottom: 50px;
 // page projet
 
 .projettop {
-
-  width:100%;
+  width:60%;
+  margin: auto;
   height: 490px;
   margin-bottom: 50px;
 
@@ -381,8 +389,8 @@ margin-bottom: 50px;
 //page equipe
 
 .equipetop {
-
-  width:100%;
+  width:60%;
+  margin: auto;
   height: 490px;
   margin-bottom: 50px;
 
@@ -438,7 +446,8 @@ margin-bottom: 20px;
 
 .contacttop {
 
-  width:100%;
+  width:60%;
+  margin: auto;
   height: 490px;
   margin-bottom: 50px;
 
@@ -460,7 +469,8 @@ margin-bottom: 20px;
 //page FAQ
 .faqtop {
 
-  width:100%;
+  width:60%;
+  margin: auto;
   height: 490px;
   margin-bottom: 50px;
 
