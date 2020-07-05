@@ -38,12 +38,19 @@
   <input type="text" class="modificationsfields" name="categorie_id" value="<%= @product.categorie_id %>" />
   <p>zone:</p>
   <input type="text" class="modificationsfields" name="zone_id" collection="<%= @zones %>" value="<%= @product.zone_id %>" />
-  <p> Enfants acceptés?
+
+<!--   <p> Enfants acceptés?
   <input type="checkbox"  name="childs" value="<%= @product.childs %>" />
   </p>
   <p> Repas inclus?
   <input type="checkbox" name="lunch" value="<%= @product.lunch %>" />
-  </p>
+  </p> -->
+
+<%= check_box_tag(:childs, value = "1", checked = @product.childs ) %>
+<%= label_tag(:childs, "Enfants acceptés?") %>
+<%= check_box_tag(:lunch, value = "1", checked = @product.lunch) %>
+<%= label_tag(:lunch, "Repas inclus?") %>
+
   <p>Durée en minutes :</p>
   <input type="integer" name="duration" value="<%= @product.duration %>" />
   <p> Nombre de participants maximum </p>
@@ -53,9 +60,11 @@
   <div class=" miniphoto ">
         <%= cl_image_tag @product.photo %>
       </div>
+      <p><input type="submit" value="supprimer l'image" value="@product.photo.purge" /></p>
   </p>
 
-  <input type="file" name="photo" value="<%= @product.photo %>" />
+  <!-- <input type="file" name="photo" /> -->
+  <%= file_field_tag ':photo' %>
   <p> </p>
 
    <p> Photos supplementaires pour la gallerie (minimum 3)</p>
@@ -74,8 +83,11 @@
                 <% end %>
   </p>
 
+
+
+
     </div>
 
 
 </div>
-</div>
+</div>r

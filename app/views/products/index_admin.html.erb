@@ -19,6 +19,10 @@
           <input type="submit" class="btn btn-primary" value="Supprimer la visitte" />
           <% end %>
 
+          <%= simple_form_for product do |f| %>
+          <%= f.photo.delete  %>
+          <%= f.button :submit %>
+
       </div>
 
 

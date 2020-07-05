@@ -5,6 +5,10 @@ class PagesController < ApplicationController
   def home
   end
 
+  def cgu
+    @currentlegal = Legal.last
+  end
+
   def user
  @user = current_user
   end
@@ -18,6 +22,7 @@ class PagesController < ApplicationController
     @messages = Contact.all
     @bookings = Booking.all
     @visittes = Product.last(3)
+    @legals = Legal.all
   end
 
 end

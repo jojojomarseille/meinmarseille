@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
 
+  get 'legals/new'
+  get 'legals/create'
+  get 'legals/index'
   get 'contact/index'
   get 'contact/create'
   get 'home/index'
@@ -29,6 +32,13 @@ get 'pages/prix'
   get 'contacts/new'
   post 'contacts' => 'contacts#create'
   delete 'contacts/:id' => 'contacts#destroy'
+
+  get 'legals' => 'legals#index'
+  get 'legals/new'
+  post 'legals' => 'legals#create'
+  delete 'legals/:id' => 'legals#destroy'
+  get 'legals/:id' => 'legals#show_admin'
+  patch 'legals/:id' => 'legals#update'
 
 #le nesting ci dessous est un essaie, si ca ne fonctionnepas, on l'enlevera
 

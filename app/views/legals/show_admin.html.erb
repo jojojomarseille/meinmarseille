@@ -1,0 +1,15 @@
+
+<h2> Modifier: <%= @currentlegal.title %>  </h2>
+
+
+  <%= form_tag "/legals/#{@currentlegal.id}", method: "patch" do %>
+  <p> Titre: </p>
+  <input type="text" class="modificationsfields" name="title" value="<%= @currentlegal.title %>" />
+  <p> Texte: </p>
+  <input type="textarea" class="modificationsfields" name="texte" value="<%= @currentlegal.texte %>" />
+
+    <p>
+        <br/>
+      <input type="submit" value="mettre a jour la visite" />
+    </p>
+<% end %>
