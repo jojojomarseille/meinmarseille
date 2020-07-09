@@ -10,14 +10,14 @@
 
       <li classe="categories">
         <div class="dropdown">
-
+<!-- qui sommes nous ? -->
             <div class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" >
-             Qui sommes nous?
+             Über uns?
             </div>
-
+<!-- le projet et l'equipe -->
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <%= link_to "Le projet", pages_projet_path, class: "dropdown-item" %>
-              <%= link_to "L'équipe", pages_equipe_path, class: "dropdown-item" %>
+              <%= link_to "Das Projekt", pages_projet_path, class: "dropdown-item" %>
+              <%= link_to "Das Team", pages_equipe_path, class: "dropdown-item" %>
             </div>
 
         </div>
@@ -25,9 +25,9 @@
 
       <li classe="categories">
         <div class="dropdown">
-
+<!-- visittes -->
             <div class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" >
-             Visites
+             Führungen
             </div>
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -38,18 +38,18 @@
 
         </div>
       </li>
-
+<!-- prix -->
       <li classe="catego ">
-          <%= link_to "Prix", pages_prix_path, class: "dropdown-item" %>
+          <%= link_to "Preise", pages_prix_path, class: "dropdown-item" %>
       </li>
 
-
+<!-- FAQ -->
       <li classe="catego ">
         <%= link_to "F A Q", pages_faq_path, class: "dropdown-item" %>
       </li>
-
+<!-- contact -->
        <li classe="catego ">
-        <%= link_to "Contacts", pages_contact_path, class: "dropdown-item" %>
+        <%= link_to "Kontakt", pages_contact_path, class: "dropdown-item" %>
       </li>
 
     </ul>
@@ -70,9 +70,9 @@
             <p> </p>
             <% else %>
             <% end %>
-            <%= link_to "mes bookings", booking_by_user_path, class: "dropdown-item" %>
-            <%= link_to "mon panier", "/carts/#{session[:cart_id]} ", class: "dropdown-item" %>
-            <%= link_to "mes infos", "pages/user", class: "dropdown-item" %>
+            <%= link_to "Meine Buchungen", booking_by_user_path, class: "dropdown-item" %>
+            <%= link_to "Mein Warenkorb", "/carts/#{session[:cart_id]} ", class: "dropdown-item" %>
+            <%= link_to "Meine Infos", "pages/user", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>

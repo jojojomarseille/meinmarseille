@@ -9,7 +9,7 @@
 
         <h1> <%=@product.title%> </h1>
         <button type="button" class="btn btn-primary btn-header" data-toggle="modal" data-target="#exampleModal">
-        Reserver
+        Buchen
       </button>
       </div>
     </div>
@@ -43,21 +43,25 @@
       <div class="bloc-picto-3">
         <div class="groupepictos1">
           <li>
-            <ul> <i class="fas fa-hiking"></i> Dificutée: intermediaire </ul>
-            <ul> <i class="fas fa-users"></i> Participants max : <%= @product.jauge %> personnes </ul>
+            <!-- dificulté -->
+            <ul> <i class="fas fa-hiking"></i> Schwierigkeit: intermediaire </ul>
+            <!-- participants max -->
+            <ul> <i class="fas fa-users"></i> Teilnehmer max: <%= @product.jauge %> </ul>
           </li>
         </div>
         <div class="grouppictos2">
           <li>
-            <ul> <i class="fas fa-child"></i> Enfants: <%= @product.childs %> </ul>
-            <ul> <i class="fas fa-clock"></i> Duration: <%= @product.duration %> </ul>
+            <!-- enfants -->
+            <ul> <i class="fas fa-child"></i> Kinder: <%= @product.childs %> </ul>
+            <!-- durée -->
+            <ul> <i class="fas fa-clock"></i> Dauer: <%= @product.duration %> </ul>
           </li>
         </div>
       </div>
 
 
       <div class="Practish">
-        <h3>Practish</h3>
+        <h3>Gut zu wissen</h3>
         <p> <%= markdown(@product.description2) %> </p>
       </div>
       <!-- plus besoin de l'encarts tips, ci dessous , qui faisait doublon avec practish -->
@@ -67,7 +71,7 @@
       </div> -->
 
       <div class="pricegrid">
-        <h3> Tarif par personne </h3>
+        <h3> Richttarif pro Gruppe </h3>
         <div class="row">
           <div class="col-md-4 case ">1 - 5</div>
           <div class="col-md-4 case">6 - 10</div>
@@ -85,7 +89,7 @@
 
 
       <button type="button" id= "btn2" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Reserver
+        Buchen
       </button>
     </div>
 
@@ -95,7 +99,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">envoyer une demande de reservation</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Buchungsanfrage senden</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -195,7 +199,7 @@
   <div class="row formulaire">
     <div class="col-sm-12">
       <section class="mb-4">
-        <h3 class="h1-responsive font-weight-bold text-center my-4">Vous avez une question? Contactez-nous</h3>
+        <h3 class="h1-responsive font-weight-bold text-center my-4">Eine Frage? Kontaktieren Sie uns!</h3>
         <p class="text-center w-responsive mx-auto mb-5"> <%= render "contacts/form" %> </p>
       </section>
     </div>
