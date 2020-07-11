@@ -11,15 +11,19 @@
 
         <div class="carousel-inner">
             <div class="carousel-item active">
-              <a href="/products/50">
+              <a href="/products/13">
                 <%= image_tag "mein-marseille_slide1.png" %>
               </a>
             </div>
             <div class="carousel-item">
-              <%= image_tag "slider.png" %>
+              <a href="/products/13">
+                <%= image_tag "slider.png" %>
+              </a>
             </div>
             <div class="carousel-item">
-              <%= image_tag "mein-marseille_slide1.png" %>
+              <a href="/products/13">
+                <%= image_tag "mein-marseille_slide1.png" %>
+              </a>
             </div>
         </div>
 
@@ -68,9 +72,10 @@
 
       </div>
     <% end %>
-</div>
 
-  <p><%= paginate @les_produits %></p>
+</div>
+<div class="paginate" style="margin: auto"><%= paginate @les_produits %></div>
+
 
 
 
