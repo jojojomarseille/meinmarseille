@@ -1,0 +1,14 @@
+<h2> Modifier question: <%= @currentfaq.id %>  </h2>
+
+
+  <%= form_tag "/faqs/#{@currentfaq.id}", method: "patch" do %>
+  <p> Titre: </p>
+  <input type="text" class="modificationsfields" name="question" value="<%= @currentfaq.question %>" />
+  <p> Texte: </p>
+  <input type="textarea" id="foo" class="modificationsfields" name="answer" value="<%= @currentfaq.answer %>" />
+
+    <p>
+        <br/>
+      <input type="submit" value="mettre a jour la visite" />
+    </p>
+<% end %>

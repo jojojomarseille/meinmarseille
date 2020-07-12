@@ -40,6 +40,14 @@ get 'pages/prix'
   get 'legals/:id' => 'legals#show_admin'
   patch 'legals/:id' => 'legals#update'
 
+  get 'faqs' => 'faqs#index'
+  get 'faqs/new'
+  post 'faqs' => 'faqs#create'
+  get 'faqs/index_admin' => 'faqs#index_admin'
+  get 'faqs/index_admin/:id' => 'faqs#show_admin'
+  patch 'faqs/:id' => 'faqs#update'
+  delete 'faqs/:id' => 'faqs#destroy'
+
 #le nesting ci dessous est un essaie, si ca ne fonctionnepas, on l'enlevera
 
   #get 'products/new' => 'products#new'

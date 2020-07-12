@@ -1,0 +1,45 @@
+
+<div class="row">
+
+  <div class="faqtop">
+    <%= image_tag "header-page-FAQ.png"  %>
+    <h1> FAQ </h1>
+  </div>
+</div>
+
+
+        <% @faqs.each do |faq| %>
+        <p><%=@faqs.count%></p>
+          <%if faq.id.even? %>
+            <div class="questioncard row">
+              <div class="questioncardtext col-md-9">
+                  <h2> <%= faq.question%> </h2>
+                  <p> <%= faq.answer%>
+                  </p>
+              </div>
+              <div class="questioncardpics col-md-3 rotation270">
+                <%= cl_image_tag faq.photo %>
+              </div>
+            </div>
+          <%else%>
+            <div class="questioncard row">
+              <div class="questioncardpics col-md-3 rotation270">
+                <%= cl_image_tag faq.photo %>
+              </div>
+              <div class="questioncardtext col-md-9">
+                  <h2> <%= faq.question%> </h2>
+                  <p> <%= faq.answer%>
+                  </p>
+              </div>
+            </div>
+          <%end%>
+
+        <%end%>
+
+
+
+
+
+
+
+
