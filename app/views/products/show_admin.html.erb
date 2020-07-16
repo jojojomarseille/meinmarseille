@@ -39,6 +39,16 @@
   <p>zone:</p>
   <input type="text" class="modificationsfields" name="zone_id" collection="<%= @zones %>" value="<%= @product.zone_id %>" />
 
+<h3>Qui faite la visitte? </h3>
+
+  <%= check_box_tag(:partner, value = "1", checked = @product.partner ) %>
+  <%= label_tag(:partner, "Visite opérée par un partenaire?") %>
+  <p>Si oui, nom du partenaire (sera affiché dans la visitte)</p>
+  <input type="text" class="modificationsfields" name="partnername" value="<%= @product.partnername %>" />
+  <p>lien vers le site du partner:</p>
+  <input type="text" class="modificationsfields" name="partnermail" value="<%= @product.partnermail %>" />
+
+
 <!--   <p> Enfants acceptés?
   <input type="checkbox"  name="childs" value="<%= @product.childs %>" />
   </p>

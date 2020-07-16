@@ -1,26 +1,29 @@
 
+<%if current_user.admin %>
+  <%= link_to "ajouter une question", faqs_new_path%>
 
-<%= link_to "ajouter une question", faqs_new_path%>
 
+   <% @faqs.each do |faq| %>
 
- <% @faqs.each do |faq| %>
-
-        <div class="questioncard row">
-          <div class="questioncardtext col-md-9">
-              <h2> <%= faq.id%> <%= markdown(faq.question)%> </h2>
-              <p> <%= markdown(faq.answer) %>
-              </p>
-               <%= form_tag "index_admin/#{faq.id}", method: "get" do %>
-          <input type="submit" class="btn btn-primary" value="modifier la question" />
-          <% end %>
-        <%= form_tag "/faqs/#{faq.id}", method: "delete" do %>
-          <input type="submit" class="btn btn-primary" value="Supprimer la question" />
-          <% end %>
+          <div class="questioncard row">
+            <div class="questioncardtext col-md-9">
+                <h2> <%= faq.id%> <%= markdown(faq.question)%> </h2>
+                <p> <%= markdown(faq.answer) %>
+                </p>
+                 <%= form_tag "index_admin/#{faq.id}", method: "get" do %>
+            <input type="submit" class="btn btn-primary" value="modifier la question" />
+            <% end %>
+          <%= form_tag "/faqs/#{faq.id}", method: "delete" do %>
+            <input type="submit" class="btn btn-primary" value="Supprimer la question" />
+            <% end %>
+            </div>
+            <div class="questioncardpics col-md-3 rotation270">
+              <%= cl_image_tag faq.photo %>
+            </div>
           </div>
-          <div class="questioncardpics col-md-3 rotation270">
-            <%= cl_image_tag faq.photo %>
-          </div>
-        </div>
-        <%end%>
+          <%end%>
+<% else %>
+<% end %>
+
 
 

@@ -25,6 +25,14 @@ form qui fonctionne avec la photo:
         <div class="label">Jauge</div>
         <div class="typo"> <%= f.input :jauge, label: false %> </div>
 
+        <h3>Qui faite la visitte? </h3>
+        <div class="label">Visite opérée par un partenaire?</div>
+        <div class="typo"> <%= f.input :partner, label: false %> </div>
+        <div class="label">Si oui, nom du partenaire (sera affiché dans la visitte)</div>
+        <div class="typo"> <%= f.input :partnername, label: false %> </div>
+        <div class="label">lien vers le site du partenaire</div>
+        <div class="typo"> <%= f.input :partnermail, label: false %> </div>
+
         <div class="label">zone_id</div>
         <div class="typo"> <%= f.input :zone_id, collection: @zones , label: false %> </div>
         <div class="label">categorie_id</div>

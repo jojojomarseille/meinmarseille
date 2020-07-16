@@ -60,15 +60,18 @@
       </div>
 
 
+
+
       <div class="Practish">
         <h3>Gut zu wissen</h3>
         <p> <%= markdown(@product.description2) %> </p>
       </div>
-      <!-- plus besoin de l'encarts tips, ci dessous , qui faisait doublon avec practish -->
-      <!-- <div class="Tips">
-        <h3>Tips</h3>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-      </div> -->
+
+<!-- suggestions
+ -->      <div class="Tips">
+        <a href="https://www.laprovence.com/"><h3><%= @suggestion.title%></h3></a>
+        <a href="https://www.laprovence.com/"><%= cl_image_tag @suggestion.photo %></a>
+      </div>
 
       <div class="pricegrid">
         <h3> Richttarif pro Gruppe </h3>
@@ -106,7 +109,14 @@
             </div>
             <div class="modal-body">
 
+              <% if @product.partner == false %>
+
               <%= render "bookings/form" %>
+
+              <% else %>
+              Visitte opérée par <%= @product.partnername %> :
+              <%= link_to @product.partnermail, @product.partnermail %>
+              <% end %>
             </div>
             <div class="modal-footer">
 

@@ -11,6 +11,11 @@ Rails.application.routes.draw do
   resources :line_items
   resources :carts
   devise_for :users
+  # le code ci-dessous n'est pas necessaire, je le garde au cas ou ca rebug, mais il est destiné a etre supprimé
+  # devise_scope :users do
+  #   get '/users/sign_out' => 'devise/sessions#delete'
+  # end
+
   root to: 'products#index'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
