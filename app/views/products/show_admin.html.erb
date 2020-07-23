@@ -22,31 +22,34 @@
 
   <%= form_tag "/products/#{@product.id}", method: "patch" do %>
   <p> Titre: </p>
-  <input type="text" class="modificationsfields" name="title" value="<%= @product.title %>" />
+  <input type="text" class="modificationsfields form-control" name="title" value="<%= @product.title %>" />
   <p> Sous-titre: </p>
-  <input type="text" class="modificationsfields" name="subtitle" value="<%= @product.subtitle %>" />
+  <input type="text" class="modificationsfields form-control" name="subtitle" value="<%= @product.subtitle %>" />
 
   <p>Description:</p>
-  <input id="modifdescription" class="modificationsfields" type="textarea" name="description" value="<%= @product.description %>" />
+  <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"> <%= @product.description %></textarea>
+
   <p>Description homepage (340 caracteres):</p>
-  <input type="text" class="modificationsfields" name="description3" value="<%= @product.description3 %>" />
+  <textarea class="form-control" name="description3" id="exampleFormControlTextarea1" rows="3"> <%= @product.description3 %></textarea>
   <p>Practish:</p>
-  <input type="text" class="modificationsfields" name="description2" value="<%= @product.description2 %>" />
+  <textarea class="form-control" name="description2" id="exampleFormControlTextarea1" rows="3"> <%= @product.description2 %></textarea>
   <p>Prix:</p>
-  <input type="text" class="modificationsfields" name="price" value="<%= @product.price %>" />
+  <input type="text" class="modificationsfields form-control" name="price" value="<%= @product.price %>" />
   <p>categorie:</p>
-  <input type="text" class="modificationsfields" name="categorie_id" value="<%= @product.categorie_id %>" />
+  <input type="text" class="modificationsfields form-control" name="categorie_id" value="<%= @product.categorie_id %>" />
   <p>zone:</p>
-  <input type="text" class="modificationsfields" name="zone_id" collection="<%= @zones %>" value="<%= @product.zone_id %>" />
+  <input type="text" class="modificationsfields form-control" name="zone_id" collection="<%= @zones %>" value="<%= @product.zone_id %>" />
 
 <h3>Qui faite la visitte? </h3>
 
   <%= check_box_tag(:partner, value = "1", checked = @product.partner ) %>
   <%= label_tag(:partner, "Visite opérée par un partenaire?") %>
   <p>Si oui, nom du partenaire (sera affiché dans la visitte)</p>
-  <input type="text" class="modificationsfields" name="partnername" value="<%= @product.partnername %>" />
+  <input type="text" class="modificationsfields form-control" name="partnername" value="<%= @product.partnername %>" />
   <p>lien vers le site du partner:</p>
-  <input type="text" class="modificationsfields" name="partnermail" value="<%= @product.partnermail %>" />
+  <input type="text" class="modificationsfields form-control" name="partnermail" value="<%= @product.partnermail %>" />
+
+
 
 
 <!--   <p> Enfants acceptés?
@@ -62,9 +65,9 @@
 <%= label_tag(:lunch, "Repas inclus?") %>
 
   <p>Durée en minutes :</p>
-  <input type="integer" name="duration" value="<%= @product.duration %>" />
+  <input type="integer" class="form-control" name="duration" value="<%= @product.duration %>" />
   <p> Nombre de participants maximum </p>
-  <input type="integer" name="jauge" value="<%= @product.jauge %>" />
+  <input type="integer" class="form-control" name="jauge" value="<%= @product.jauge %>" />
   <h3> Photos</h3>
   <p> photo de header actuelle:
   <div class=" miniphoto ">
@@ -82,7 +85,7 @@
 
     <p>
         <br/>
-      <input type="submit" value="mettre a jour la visite" />
+      <input type="submit" class="btn btn-primary" value="mettre a jour la visite" />
     </p>
 <% end %>
 

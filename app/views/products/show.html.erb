@@ -109,13 +109,13 @@
             </div>
             <div class="modal-body">
 
-              <% if @product.partner == false %>
+              <% if @product.partner == true %>
 
-              <%= render "bookings/form" %>
+              <p>Visitte opérée par <%= @product.partnername %> :</p>
+              <%= link_to @product.partnername, @product.partnermail %>
 
               <% else %>
-              Visitte opérée par <%= @product.partnername %> :
-              <%= link_to @product.partnermail, @product.partnermail %>
+              <%= render "bookings/form" %>
               <% end %>
             </div>
             <div class="modal-footer">
@@ -216,9 +216,7 @@
   </div>
 
 
-<button type="button" class="boutonjs btn btn-primary btn-header">
-  Clique!!!
-      </button>
+
 
 
 
