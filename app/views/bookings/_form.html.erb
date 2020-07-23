@@ -1,16 +1,62 @@
 <%= form_tag "/products/#{@product.id}/bookings", method: "post" do %>
-  <input type="string" name="comment" placeholder="Kommentar"/>
-  <input type="integer" name="participants" placeholder="Teilnehmerzahl" />
 
-  <input type="date" name="date" />
-  <input type="hidden" name="sku" value="booking<%=@product.id%>"/>
-  <input type="hidden" name="price" value="<%=@product.price%>"/>
-  <input type="hidden" name="product_id" value="<%=@product.id%>" />
-  <input type="integer" name="childs" placeholder="childs" />
+    <div class="row row0">
+      <div class="col">
+
+        Dates de votre demande de reservation:
+        <input type="date" name="date" />
+
+        <input type="hidden" name="sku" value="booking<%=@product.id%>"/>
+        <input type="hidden" name="price" value="<%=@product.price%>"/>
+        <input type="hidden" name="product_id" value="<%=@product.id%>" />
+      </div>
+    </div>
+
+    <div class="row row1">
+    <div class="col">
+      Teilnehmerzahl:
+      <select class="form-control" name="participants"  >
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+      <option>9</option>
+      <option>10</option>
+    </select>
+    </div>
+    <div class="col">
+      Kinders:
+       <select class="form-control" name="childs" placeholder="Teilnehmerzahl" >
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+      <option>9</option>
+      <option>10</option>
+    </select>
+    </div>
+  </div>
+
+  <div class="row row2">
+    <div class="col">
+      <textarea class="form-control" name="comment" placeholder="Kommentar" rows="3"></textarea>
+    </div>
+  </div>
 
 
 <!-- <input type="hidden" name="status" value= "0" /> -->
+  <div class="row row3">
+    <div class="col">
+      <button type="submit" class="btn btn-primary mb-2" onclick="return confirm('Votre de mande de reservation, vas etre transmise a notre guide. etes vous sur?' )">Anfrage senden</button>
+    </div>
+  </div>
 
-
-  <input type="submit" value="Anfrage senden" onclick="return confirm('Votre de mande de reservation, vas etre transmise a notre guide. etes vous sur?' )" />
 <% end %>
