@@ -1,63 +1,71 @@
-<h1>Mes Bookings</h1>
 
-<% @booking_by_user.each do |booking| %>
-    <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-
-      <div class="card-product-infos">
-        <h2>demande de Booking no <%= booking.id%> pour le <%= booking.date %> </h2>
-        <p> participants: <%= booking.participants%></p>
-        <p> comment: <%= booking.comment%></p>
-        <p> user: <%= booking.user_id%></p>
-        <p> status: <%= booking.status%></p>
-
-      </div>
-
-      <div class="card-product-infos2">
-        <%#
-        ci dessous on vas faire un systéme qui convertis le code status (qui est un integer) en un status comprehensible par l'homme
-        ce sera: en attente pour un status = 0, accepté pour un status = 1 et refusé pour un status = 2.
-        -%>
-        <% if booking.status == 1 %>
-        status: accepté
-        <% elsif booking.status == 2 %>
-        <p> status: refusé</p>
-        <% else %>
-        status: en attente
-        <%end %>
-
-        <%# la ci dessous on vas avoir un ptit bloc de code pour pouvoir modifier le status de la booking -%>
-        <% if current_user.admin ==true %>
-          <%= form_tag "/bookings/#{booking.id}", method: "patch" do %>
-              <input type="integer" name="status" value= "1" />
-              <input type="submit" value="accepter" />
-          <% end %>
-
-          <%= form_tag "/bookings/#{booking.id}", method: "delete" do %>
-          <input type="submit" class="btn btn-primary" value="Supprimer le booking" />
-          <% end %>
-        <% else%>
-        <% end%>
-        <p> product: <%= booking.product_id%></p>
-      </div>
-
-      <div class="card-product-infos2">
-      <p> childs: <%=booking.childs%> </p>
-      <p> sku: <%=booking.sku%> </p>
-       <p>Amount: <%= humanized_money_with_symbol(booking.price) %></p>
-
-      <% if booking.status == 1 %>
-          <%= form_tag orders_path do %>
-            <%= hidden_field_tag 'booking_id', booking.id %>
-            <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-          <% end %>
-      <% else %>
-      <%end %>
+<div class="container">
+  <h1>Mes demandes de Bookings</h1>
+  <div id="booking_by_user-line">
+  </div>
 
 
-    </div>
+    <% @booking_by_user.each do |booking| %>
+        <div class="card-product">
+          <%= cl_image_tag booking.product.photo %>
 
-    </div>
-  <% end %>
+
+
+          <div class="card-product-infos">
+            <h2>demande de Booking no <%= booking.id%> pour le <%= booking.date %> </h2>
+            <p> participants: <%= booking.participants%></p>
+            <p> comment: <%= booking.comment%></p>
+            <p> user: <%= booking.user_id%></p>
+            <p> status: <%= booking.status%></p>
+
+          </div>
+
+          <div class="card-product-infos2">
+            <%#
+            ci dessous on vas faire un systéme qui convertis le code status (qui est un integer) en un status comprehensible par l'homme
+            ce sera: en attente pour un status = 0, accepté pour un status = 1 et refusé pour un status = 2.
+            -%>
+            <% if booking.status == 1 %>
+            status: accepté
+            <% elsif booking.status == 2 %>
+            <p> status: refusé</p>
+            <% else %>
+            status: en attente
+            <%end %>
+
+            <%# la ci dessous on vas avoir un ptit bloc de code pour pouvoir modifier le status de la booking -%>
+            <% if current_user.admin ==true %>
+              <%= form_tag "/bookings/#{booking.id}", method: "patch" do %>
+                  <input type="integer" name="status" value= "1" />
+                  <input type="submit" value="accepter" />
+              <% end %>
+
+              <%= form_tag "/bookings/#{booking.id}", method: "delete" do %>
+              <input type="submit" class="btn btn-primary" value="Supprimer le booking" />
+              <% end %>
+            <% else%>
+            <% end%>
+            <p> product: <%= booking.product_id%></p>
+          </div>
+
+          <div class="card-product-infos2">
+          <p> childs: <%=booking.childs%> </p>
+          <p> sku: <%=booking.sku%> </p>
+           <p>Amount: <%= humanized_money_with_symbol(booking.price) %></p>
+
+          <% if booking.status == 1 %>
+              <%= form_tag orders_path do %>
+                <%= hidden_field_tag 'booking_id', booking.id %>
+                <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+              <% end %>
+          <% else %>
+          <%end %>
+
+
+        </div>
+
+        </div>
+      <% end %>
+  </div>
 
 

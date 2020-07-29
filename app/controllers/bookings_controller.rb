@@ -19,6 +19,7 @@ def destroy
 def booking_by_users
   @resa = Booking.all
   @booking_by_user = @resa.where(user: current_user.id)
+  @products = Product.all
 end
 
 #def create
