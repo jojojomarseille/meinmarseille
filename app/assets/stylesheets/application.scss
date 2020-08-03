@@ -103,9 +103,9 @@ li {
 
 .description {
 text-align: justify;
-padding-top: 70px;
+// padding-top: 20px;
 
-height: 1000px;
+height: 980px;
 }
 
 .description h2 {
@@ -131,7 +131,7 @@ padding-bottom: 20px;
   display: flex;
   justify-content: left;
   margin-top: 25px;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
   margin-left: -40px;
 
 }
@@ -148,7 +148,8 @@ padding-bottom: 20px;
   height: 260px;
   overflow: hidden;
   line-height: 1.5em;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  margin-top: 30px;
   // en attente : border: 2px solid #15f2c9;
 
 }
@@ -169,14 +170,24 @@ padding-bottom: 20px;
   z-index: 2;
   margin-left: 70px;
   color: white;
+  font-size: 3em;
 }
 
 
 #btn2 {
   width: 100%;
+  margin-bottom: 20px;
 
 }
 
+.suggtitle {
+  text-align:center;
+}
+
+.suggline {
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
+}
 
 .row {
   width:100%;
@@ -199,8 +210,7 @@ padding-bottom: 20px;
 
 .pricegrid {
   text-align: center;
-  margin-bottom: 30px;
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .pricegrid h3 {
