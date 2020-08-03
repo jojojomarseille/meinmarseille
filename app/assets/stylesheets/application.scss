@@ -320,7 +320,7 @@ padding-bottom: 20px;
 }
 
 
-//pour l'index booking//
+//pour l'index booking user et admin//
 
 #booking_by_user-line {
   border-bottom: 1px solid black;
@@ -448,6 +448,27 @@ background-color: #e24646;
  font-weight: bold;
   font-size: 20px;
   text-align: center;
+}
+
+#booking_index-line {
+  border-bottom: 1px solid black;
+  margin-bottom: 30px;
+}
+
+.bookingcardinfo2admin {
+  width: 50%;
+}
+
+.bookingcardinfo2admin h4 {
+  text-align: right;
+  margin-right: 20px;
+}
+
+.bookingcardinfo2admin input {
+  width: 80%;
+  margin-top: 20px;
+  margin-left: 21%;
+
 }
 
 //page prix

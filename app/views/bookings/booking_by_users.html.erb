@@ -7,67 +7,67 @@
 
     <% @booking_by_user.each do |booking| %>
 
-<div class="card-product">
-                   <%= cl_image_tag booking.product.photo %>
+      <div class="card-product">
+                         <%= cl_image_tag booking.product.photo %>
 
-                  <div class="card-space1">
+                        <div class="card-space1">
 
-                    <div class="raw rawcs1">
-                      <div class="bookingcardtitle">
-                        <h2> Demande de booking no <%= booking.id%> </h2>
-                      </div>
-                      <!-- <div class="bookingcardstatus"> -->
-                        <!-- ici un ptit bout de code pour avoir un affichage du status  -->
+                          <div class="raw rawcs1">
+                            <div class="bookingcardtitle">
+                              <h2> Demande de booking no <%= booking.id%> </h2>
+                            </div>
+                            <!-- <div class="bookingcardstatus"> -->
+                              <!-- ici un ptit bout de code pour avoir un affichage du status  -->
 
-                          <% if booking.status == 1 %>
-                            <div class="bookingcardstatus statusaccepted">status: accepté </div>
-                          <% elsif booking.status == 2 %>
-                            <div class="bookingcardstatus statusrefused">status: refusé </div>
-                          <% else %>
-                            <div class="bookingcardstatus statuswait">status: en attente</div>
-                          <%end %>
+                                <% if booking.status == 1 %>
+                                  <div class="bookingcardstatus statusaccepted">status: accepté </div>
+                                <% elsif booking.status == 2 %>
+                                  <div class="bookingcardstatus statusrefused">status: refusé </div>
+                                <% else %>
+                                  <div class="bookingcardstatus statuswait">status: en attente</div>
+                                <%end %>
 
-                      <!-- </div> -->
+                            <!-- </div> -->
 
-                    </div>
-                    <div class="raw rawcs2">
-                      <div class="bookingcardinfo1">
-                        <p>Date: <%= booking.date %> </p>
-                        <p>adultes: <%= booking.participants%> </p>
-                        <p>enfants: <%=booking.childs%> </p>
-                        <p>commentaire: <%= booking.comment%> </p>
-                      </div>
-                      <div class="bookingcardinfo2">
-                        <h4>Prix: <%= humanized_money_with_symbol(booking.price) %> </h4>
-                       <!--  ici un ptit bout de code pour permettre le paiement si le booking est validé -->
-                        <p>
-                          <% if booking.status == 1 %>
-                            <%= form_tag orders_path do %>
-                            <%= hidden_field_tag 'booking_id', booking.id %>
-                            <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-                            <% end %>
-                          <% else %>
-                          <%end %>
-                        </p>
-                        <!-- ici un ptit bout de code pour pouvoir modifier le status de la demande quand on est admin -->
-                       <!--  <p>
-                          <% if current_user.admin ==true %>
-                          <%= form_tag "/bookings/#{booking.id}", method: "patch" do %>
-                              <input type="integer" name="status" value= "1" />
-                              <input type="submit" value="accepter" />
-                          <% end %>
+                          </div>
+                          <div class="raw rawcs2">
+                            <div class="bookingcardinfo1">
+                              <p>Date: <%= booking.date %> </p>
+                              <p>adultes: <%= booking.participants%> </p>
+                              <p>enfants: <%=booking.childs%> </p>
+                              <p>commentaire: <%= booking.comment%> </p>
+                            </div>
+                            <div class="bookingcardinfo2">
+                              <h4>Prix: <%= humanized_money_with_symbol(booking.price) %> </h4>
+                             <!--  ici un ptit bout de code pour permettre le paiement si le booking est validé -->
+                              <p>
+                                <% if booking.status == 1 %>
+                                  <%= form_tag orders_path do %>
+                                  <%= hidden_field_tag 'booking_id', booking.id %>
+                                  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+                                  <% end %>
+                                <% else %>
+                                <%end %>
+                              </p>
+                              <!-- ici un ptit bout de code pour pouvoir modifier le status de la demande quand on est admin -->
+                             <!--  <p>
+                                <% if current_user.admin ==true %>
+                                <%= form_tag "/bookings/#{booking.id}", method: "patch" do %>
+                                    <input type="integer" name="status" value= "1" />
+                                    <input type="submit" value="accepter" />
+                                <% end %>
 
-                          <%= form_tag "/bookings/#{booking.id}", method: "delete" do %>
-                            <input type="submit" class="btn btn-primary" value="Supprimer le booking" />
-                          <% end %>
-                          <% else%>
-                          <% end%>
-                        </p> -->
-                      </div>
+                                <%= form_tag "/bookings/#{booking.id}", method: "delete" do %>
+                                  <input type="submit" class="btn btn-primary" value="Supprimer le booking" />
+                                <% end %>
+                                <% else%>
+                                <% end%>
+                              </p> -->
+                            </div>
 
-                    </div>
-                  </div>
-        </div>
+                          </div>
+                        </div>
+              </div>
 
       <% end %>
 

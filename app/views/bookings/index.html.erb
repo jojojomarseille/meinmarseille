@@ -1,8 +1,11 @@
-<h1>Booking#index</h1>
+<div class="container">
+<h1>Demandes de reservations à traiter</h1>
+<div id="booking_index-line">
+  </div>
 
 
   <% @bookings.each do |booking| %>
-    <div class="card-product">
+    <!-- <div class="card-product">
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
 
       <div class="card-product-infos">
@@ -45,10 +48,76 @@
       <p> childs: <%=booking.childs%> </p>
       <p> prix: <%=booking.price%> </p>
     </div>
-
-
     </div>
-  <% end %>
 
+ -->
+   <!-- seconde carte: -->
+      <div class="card-product">
+                         <%= cl_image_tag booking.product.photo %>
+
+                        <div class="card-space1">
+
+                          <div class="raw rawcs1">
+                            <div class="bookingcardtitle">
+                              <h2> Demande de booking no <%= booking.id%> </h2>
+                            </div>
+                            <!-- <div class="bookingcardstatus"> -->
+                              <!-- ici un ptit bout de code pour avoir un affichage du status  -->
+
+                                <% if booking.status == 1 %>
+                                  <div class="bookingcardstatus statusaccepted">status: accepté </div>
+                                <% elsif booking.status == 2 %>
+                                  <div class="bookingcardstatus statusrefused">status: refusé </div>
+                                <% else %>
+                                  <div class="bookingcardstatus statuswait">status: en attente</div>
+                                <%end %>
+
+                            <!-- </div> -->
+
+                          </div>
+                          <div class="raw rawcs2">
+                            <div class="bookingcardinfo1">
+                              <p>Date: <%= booking.date %> </p>
+                              <p>adultes: <%= booking.participants%> </p>
+                              <p>enfants: <%=booking.childs%> </p>
+                              <p>commentaire: <%= booking.comment%> </p>
+                            </div>
+                            <div class="bookingcardinfo2admin">
+                              <h4>Prix: <%= humanized_money_with_symbol(booking.price) %> </h4>
+                            <p>
+                                <% if current_user.admin ==true %>
+
+                                    <%if booking.status == 1 %>
+
+                                        <%= form_tag "/bookings/#{booking.id}", method: "delete" do %>
+                                          <input type="submit" class="btn btn-danger" value="Supprimer le booking" />
+                                        <% end %>
+
+                                    <%else%>
+
+                                      <%= form_tag "/bookings/#{booking.id}", method: "patch" do %>
+                                            <input type="hidden" name="status" value= "1" />
+                                            <input type="submit" class="btn btn-success" value="accepter" />
+                                        <% end %>
+
+                                      <%= form_tag "/bookings/#{booking.id}", method: "delete" do %>
+                                        <input type="submit" class="btn btn-danger" value="Supprimer le booking" />
+                                      <% end %>
+
+                                    <% end %>
+
+                                <% else%>
+
+                                <% end%>
+                              </p>
+
+
+                            </div>
+
+                          </div>
+                        </div>
+              </div>
+  <% end %>
+</div>
 
 
