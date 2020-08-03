@@ -223,6 +223,8 @@ padding-bottom: 20px;
 
 }
 
+// galerie photo
+
 .fotogalerie {
 
   display: flex;
@@ -231,14 +233,20 @@ padding-bottom: 20px;
 }
 
 .fotoelement {
-  margin: auto;
-  height: 350px;
-  width: 300px;
+  // margin: auto;
+  // height: 300px;
+  // width: 100px;
+
+}
+
+.fotorow {
+  // background-color: blue;
+
 }
 
 .fotoelement img {
-  width:100%;
-  height:100%;
+  width:300px;
+  height:250px;
 }
 
 .barreseparation {

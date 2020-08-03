@@ -160,7 +160,7 @@
       <div class="barreseparation">
       </div>
 
-      <div class="glide fotogalerie col-sm-10">
+      <div class="glide fotogalerie col-sm-12">
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
             <% @product.pictures.each do |picture| %>
@@ -206,15 +206,16 @@
 
 
 
-
+<div class="barreseparation">
+      </div>
 
 <!-- ci dessous le formulaire de contact -->
   <div class="row formulaire">
     <div class="col-sm-12">
-      <section class="mb-4">
+
         <h3 class="h1-responsive font-weight-bold text-center my-4">Eine Frage? Kontaktieren Sie uns!</h3>
-        <p class="text-center w-responsive mx-auto mb-5"> <%= render "contacts/form" %> </p>
-      </section>
+        <p > <%= render "contacts/form" %> </p>
+
     </div>
   </div>
 

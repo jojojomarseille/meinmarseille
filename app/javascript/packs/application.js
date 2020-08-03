@@ -3,12 +3,14 @@ import "bootstrap";
 
 new Glide('.glide', {
   type: 'carousel',
-  perView: 3,
-  breakpoints: {
-    800: {
-      perView: 1
-    }
-  }
+  perView: 4,
+  // autoplay: 3000,
+  // hoverpause: false,
+  // breakpoints: {
+  //   1500: {
+  //     perView: 3
+  //   }
+  // }
 
 }).mount()
 
