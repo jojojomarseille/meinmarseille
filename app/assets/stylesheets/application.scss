@@ -653,13 +653,6 @@ margin-bottom: 20px;
 
 }
 
-.rotation270 {
-   -webkit-transform: rotate(270deg);
-   -moz-transform: rotate(270deg);
-   -ms-transform: rotate(270deg);
-   -o-transform: rotate(270deg);
-   transform: rotate(270deg);
- }
 
 .faqtop img {
   width: 100%;
@@ -676,31 +669,26 @@ margin-bottom: 20px;
 
 .questioncard{
 
-  height: 300px;
+
   width: 60%;
   margin: auto;
-  margin-bottom: 50px;
-  padding: 0px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.questioncardtext {
-text-align: justify;
-padding: 15px;
+
+.card-body-faq {
+  padding: 20px;
+  font-size: 1.1em;
 }
 
-.questioncardtext h2 {
-  text-align: center;
+.card-header h2 {
+  font-size: 1.6em;
 }
 
-.questioncardpics {
 
-  height: 100%;
-}
 
-.questioncardpics img {
-  height: 100%;
-  width: 100%;
-}
+
 
 
 //CGU

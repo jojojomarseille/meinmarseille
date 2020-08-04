@@ -8,38 +8,33 @@
 </div>
 
 
-        <% @faqs.each do |faq| %>
-        <p><%=@faqs.count%></p>
-          <%if faq.id.even? %>
-            <div class="questioncard row">
-              <div class="questioncardtext col-md-9">
-                  <h2> <%= faq.question%> </h2>
-                  <p> <%= faq.answer%>
-                  </p>
-              </div>
-              <div class="questioncardpics col-md-3 rotation270">
-                <%= cl_image_tag faq.photo %>
-              </div>
-            </div>
-          <%else%>
-            <div class="questioncard row">
-              <div class="questioncardpics col-md-3 rotation270">
-                <%= cl_image_tag faq.photo %>
-              </div>
-              <div class="questioncardtext col-md-9">
-                  <h2> <%= faq.question%> </h2>
-                  <p> <%= faq.answer%>
-                  </p>
-              </div>
-            </div>
-          <%end%>
 
-        <%end%>
+<div class=" rowf ">
+  <% @faqs.each do |faq| %>
+    <div class="accordion " id="accordionExample">
+      <div class="questioncard ">
+        <div class="card-header" id="heading<%=faq.id%>">
+          <h2 >
+            <button class="btn " type="button" data-parent="#accordionExample" data-toggle="collapse" data-target="#collapse<%=faq.id%>" aria-expanded="true" aria-controls="collapseOne">
+               <%= faq.question%>
+            </button>
+          </h2>
+        </div>
+
+        <div id="collapse<%=faq.id%>" class="collapsefaq  collapse" aria-labelledby="heading<%=faq.id%>" >
+          <div class="card-body-faq">
+              <p>
+                <%= faq.answer%>
+              </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <%end%>
 
 
+</div>
 
-
-
-
+</div>
 
 
