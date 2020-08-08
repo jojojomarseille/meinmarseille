@@ -1,55 +1,71 @@
-<h1> Zone admin </h1>
 
-<h2> menu </h2>
+<div class="container">
 
+  <%if current_user.admin %>
 
-<%if current_user.admin %>
-            <%= link_to "creer un produit", new_product_path%>
-            <%= link_to "zone admin", "/admin" %>
-            <%= link_to "bookings a traiter", bookings_path %>
-            <%= link_to "demande de contacts", contacts_path %>
-            <%= link_to "categories", categories_path %>
-            <%= link_to "zones", zones_path %>
-            <%= link_to "visittes", index_admin_path%>
-            <% if @legals.count > 0 %>
-            <%= link_to "CGU", '/legals/@currentlegal.id'%>
-            <% else %>
-            <%= link_to "CGU", '/legals/new'%>
-            <% end %>
-            <%= link_to "FAQ", faqs_index_admin_path%>
-<%else%>
-<%end%>
-
-<h2> Metriques </h2>
-
-<p>Nombre d'utilisateurs:<%= @user.count %> </p>
-<p>Nombre de messages ouvert: <%= @messages.count %> </p>
-<p>Nombre de demande de reservation en attente: <%= @bookings.count %> </p>
-
-
-<h2> Visittes a venit </h2>
-
-<% @visittes.each do |product| %>
-    <div class="card-product">
-      <%= cl_image_tag product.photo %>
-
-      <div class="card-product-infos">
-        <h2>Visitte no <%= product.id%>: <%= product.title %></h2>
-        <p> <%= product.subtitle %> </p>
-        <p> <%= product.description %> </p>
-
-      </div>
-      <div class="card-product-infos2">
-
-         <%= form_tag "/index_admin/#{product.id}", method: "get" do %>
-          <input type="submit" class="btn btn-primary" value="voir la visitte" />
-          <% end %>
-        <%= form_tag "/products/#{product.id}", method: "delete" do %>
-          <input type="submit" class="btn btn-primary" value="Supprimer la visitte" />
-          <% end %>
-
-      </div>
-
-
+    <div class="adminmenu">
+                <%= link_to "Nouvelle visitte", new_product_path%>
+                <%= link_to "zoneadmin2", "/admin" %>
+                <%= link_to "Gestion des reservations", bookings_path %>
+                <%= link_to "Messages", contacts_path %>
+                <%= link_to "gestion categories", categories_path %>
+                <%= link_to "gestion zones", zones_path %>
+                <%= link_to "gestion visittes", index_admin_path%>
+                <% if @legals.count > 0 %>
+                <%= link_to "CGU", '/legals/@currentlegal.id'%>
+                <% else %>
+                <%= link_to "CGU", '/legals/new'%>
+                <% end %>
+                <%= link_to "FAQ", faqs_index_admin_path%>
     </div>
-  <% end %>
+
+    <div class="adminmetriques">
+      <div class="adminblock">
+        <p>Nombre de comptes: </p>
+        <p class="admininfo"> <%= @user.count %> </p>
+      </div>
+      <div class="adminblock">
+        <p>Nombre de messages: </p>
+        <p class="admininfo"> <%= @messages.count %> </p>
+      </div>
+      <div class="adminblock">
+        <p>Nombre de demande de reservation:  </p>
+        <p class="admininfo"> <%= @bookings.count %> </p>
+      </div>
+      <div class="adminblock">
+        <p>Nombre de demande de reservation:  </p>
+        <p class="admininfo"> <%= @bookings.count %> </p>
+      </div>
+    </div>
+
+    <div class="adminvisites">
+    <h2> Visittes a venir : </h2>
+
+    <% @visittes.each do |product| %>
+        <div class="card-product">
+          <%= cl_image_tag product.photo %>
+
+          <div class="card-product-infos">
+            <h2>Visitte no <%= product.id%>: <%= product.title %></h2>
+            <p> <%= product.subtitle %> </p>
+            <p> <%= product.description %> </p>
+
+          </div>
+          <div class="card-product-infos2">
+
+             <%= form_tag "/index_admin/#{product.id}", method: "get" do %>
+              <input type="submit" class="btn btn-primary" value="voir la visitte" />
+              <% end %>
+            <%= form_tag "/products/#{product.id}", method: "delete" do %>
+              <input type="submit" class="btn btn-primary" value="Supprimer la visitte" />
+              <% end %>
+
+          </div>
+
+        </div>
+      <% end %>
+    </div>
+  <%else%>
+  <%end%>
+
+</div>

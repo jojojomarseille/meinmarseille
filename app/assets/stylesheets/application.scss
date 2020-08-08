@@ -513,7 +513,7 @@ background-color: #e24646;
 }
 
 .pricetable {
- width: 80%;
+
  margin: auto;
 }
 
@@ -622,11 +622,9 @@ margin-bottom: 20px;
 //page contact
 
 .contacttop {
-
-  width:60%;
   margin: auto;
   height: 490px;
-  margin-bottom: 50px;
+
 
 }
 
@@ -710,3 +708,47 @@ margin-bottom: 20px;
     resize:none;
     overflow:auto;
 }
+
+//page zoneadmin
+
+.adminmenu a{
+  font-size: 1.2em;
+  padding-right: 5px;
+}
+.adminmenu {
+
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+
+}
+
+.adminmetriques {
+  display: flex;
+  padding: 20px;
+  border-bottom: 1px solid black;
+}
+
+.adminblock {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  border: 1px solid black;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.admininfo{
+  font-size: 2em;
+
+}
+
+
+.adminvisites {
+  padding: 20px;
+}
+
+.adminvisites h2 {
+  margin-bottom: 30px;
+}
+
+
