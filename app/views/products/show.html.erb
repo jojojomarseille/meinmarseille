@@ -15,6 +15,16 @@
     </div>
   </div>
 
+  <div class="row bandeaupictos">
+
+      <div> <i class="fas fa-hiking"></i> Schwierigkeit: intermediaire</div>
+      <div> <i class="fas fa-users"></i> Teilnehmer max: <%= @product.jauge %></div>
+      <div><i class="fas fa-child"></i> Kinder: <%= @product.childs %></div>
+      <div><i class="fas fa-clock"></i> Dauer: <%= @product.duration %></div>
+
+  </div>
+
+
 
   <div class="row description">
 
@@ -31,33 +41,9 @@
 
 
 
-
-
-
-
-
-
-
     <div class="bloc-picto-2 col-sm-5">
 
-      <div class="bloc-picto-3">
-        <div class="groupepictos1">
-          <li>
-            <!-- dificulté -->
-            <ul> <i class="fas fa-hiking"></i> Schwierigkeit: intermediaire </ul>
-            <!-- participants max -->
-            <ul> <i class="fas fa-users"></i> Teilnehmer max: <%= @product.jauge %> </ul>
-          </li>
-        </div>
-        <div class="grouppictos2">
-          <li>
-            <!-- enfants -->
-            <ul> <i class="fas fa-child"></i> Kinder: <%= @product.childs %> </ul>
-            <!-- durée -->
-            <ul> <i class="fas fa-clock"></i> Dauer: <%= @product.duration %> </ul>
-          </li>
-        </div>
-      </div>
+
 
       <div class="pricegrid">
 
@@ -90,7 +76,7 @@
 
  <-->
             <div class="suggtitle">
-              <h3>Diese Führung könnte Sie auch interessieren</h3>
+              <h3>Andere Führungsvorschlag: </h3>
             </div>
             <div class="suggline">
             </div>
