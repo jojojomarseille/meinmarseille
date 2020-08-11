@@ -17,11 +17,23 @@ border-bottom: solid $light-gray 1px;
   margin-right: 25px;
 }
 
-
-.link-to-text-color {
-text-decoration: none !important;
-text-color: none !important;
+.navbar-categories-list li:hover{
+  color: #0cd5b0;
+    border-bottom: 1px solid black;
 }
+// .dropdown:hover{
+//     color: #0cd5b0;
+// }
+.navbar-categories-list a:hover{
+    color: #0cd5b0;
+    border-bottom: 1px solid black;
+}
+
+
+// .link-to-text-color {
+// // text-decoration: none !important;
+// // text-color: none !important;
+// }
 
 
 
