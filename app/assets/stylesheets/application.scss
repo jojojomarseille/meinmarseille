@@ -364,7 +364,6 @@ padding-bottom: 20px;
 .card-product {
   overflow: hidden;
   height: 250px;
-  // background: blue;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
@@ -605,33 +604,23 @@ margin-bottom: 50px;
 .corpequipe {
  width: 60%;
  margin: auto;
-margin-bottom: 20px;
+ margin-bottom: 15px;
+ box-shadow: 0 0 15px rgba(0,0,0,0.2);
+ padding: 10px;
 }
 
 .corpequipe1 {
-  height: 400px;
   margin-top: 20px;
-}
-
-// .corpequipe1 img {
-//   // height: 300px;
-//   // width: 350px;
-//   // -webkit-transform:rotate(90deg);
-//   // -moz-transform: rotate(90deg);
-//   // -ms-transform: rotate(900deg);
-//   // -o-transform: rotate(90deg);
-//   // transform: rotate(90deg);
-// }
-
-
-.corpequipe2 {
-  height: 400px;
-
-}
+}sss
 
 .corpequipe1 img {
-  height: 350px;
-  width: 300px;
+  height: 250px;
+  width: 210px;
+
+}
+.corpequipe2 img {
+  height: 250px;
+  width: 210px;
 
 }
 
