@@ -1,12 +1,10 @@
-<div class="container col-sm-12">
+<div class="container col-12 col-lg-9 ">
 
 
-  <div class="row">
-
+  <div class="row col-12 " id="producti-image-header">
     <div class="product-card ">
       <div class=" bloc-photo  ">
         <%= cl_image_tag @product.photo %>
-
         <h1> <%=@product.title%> </h1>
         <button type="button" class="btn btn-primary btn-header" data-toggle="modal" data-target="#exampleModal">
         Buchen
@@ -15,20 +13,18 @@
     </div>
   </div>
 
-  <div class="row bandeaupictos">
 
+<div class=" bandeaupictos col-12 ">
       <div> <i class="fas fa-hiking"></i> Schwierigkeit: intermediaire</div>
       <div> <i class="fas fa-users"></i> Teilnehmer max: <%= @product.jauge %></div>
       <div><i class="fas fa-child"></i> Kinder: <%= @product.childs %></div>
       <div><i class="fas fa-clock"></i> Dauer: <%= @product.duration %></div>
-
   </div>
 
 
+<div class="row description col-12">
 
-  <div class="row description">
-
-    <div class="description1 col-sm-7">
+    <div class="description1 col-12 col-lg-7">
 
       <h2> <%= markdown(@product.subtitle) %> </h2>
 
@@ -41,7 +37,7 @@
 
 
 
-    <div class="bloc-picto-2 col-sm-5">
+    <div class="bloc-picto-2 col-12 col-lg-5">
 
 
 
@@ -49,14 +45,14 @@
 
         <h3> Richttarif pro Gruppe </h3>
         <div class="row">
-          <div class="col-md-4 case ">1 - 5</div>
-          <div class="col-md-4 case">6 - 10</div>
-          <div class="col-md-4 case">+ de 10</div>
+          <div class="col-4 case ">1 - 5</div>
+          <div class="col-4 case">6 - 10</div>
+          <div class="col-4 case">+ de 10</div>
         </div>
         <div class="row">
-          <div class="col-md-4 case"><%=@product.price%>€</div>
-          <div class="col-md-4 case"><%=@price2%>€</div>
-          <div class="col-md-4 case"><%=@price3%>€</div>
+          <div class="col-4 case"><%=@product.price%>€</div>
+          <div class="col-4 case"><%=@price2%>€</div>
+          <div class="col-4 case"><%=@price3%>€</div>
         </div>
       </div>
 
@@ -64,11 +60,16 @@
         Buchen
       </button>
 
-      <div class="Practish">
+
+      <!-- <div class="test">
+        <h3>Gut zu wissen</h3>
+
+        <p> <%= markdown(@product.description2) %> </p>
+      </div> -->
+      <div class="Practish col-12">
 
         <h3>Gut zu wissen</h3>
-        <div class="suggline">
-            </div>
+
         <p> <%= markdown(@product.description2) %> </p>
       </div>
 
@@ -78,8 +79,10 @@
             <div class="suggtitle">
               <h3>Andere Führungsvorschlag: </h3>
             </div>
+
             <div class="suggline">
             </div>
+
             <div class="Tips">
              <a href="https://www.laprovence.com/"><h3><%= @suggestion.title%></h3></a>
              <a href="https://www.laprovence.com/"><%= cl_image_tag @suggestion.photo %></a>
@@ -141,54 +144,7 @@
 <% end %>
 
 <!-- ci dessous on a une gallerie photo qui ne s'affichera que si il y a plusieurs photos -->
-<%if @product.pictures.count > 0 %>
-  <div class=" row fotorow">
-      <div class="barreseparation">
-      </div>
 
-      <div class="glide fotogalerie col-sm-12">
-        <div class="glide__track" data-glide-el="track">
-          <ul class="glide__slides">
-            <% @product.pictures.each do |picture| %>
-              <li class="glide__slide fotoelement" data-toggle="modal" data-target="#photoModal<%= picture.id%>"><%= cl_image_tag(picture.photo) %></li>
-
-
-                  <div class="modal " id="photoModal<%= picture.id %>"  role="dialog">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="photoModal<%= picture.id %>Label">coucou</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                          </div>
-                          <div class="modal-body">
-                            <%= cl_image_tag(picture.photo) %>
-                          </div>
-                      </div>
-                    </div>
-               </div>
-
-
-
-
-
-
-
-
-
-
-            <% end %>
-          </ul>
-        </div>
-        <div class="glide__arrows" data-glide-el="controls">
-          <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
-          <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
-        </div>
-      </div>
-  </div>
-<% else %>
-<% end %>
 
 
 
@@ -196,8 +152,8 @@
       </div>
 
 <!-- ci dessous le formulaire de contact -->
-  <div class="row formulaire">
-    <div class="col-sm-12">
+  <div class="row formulaire col-12">
+
 
         <h3 class="h1-responsive font-weight-bold text-center my-4">Eine Frage? Kontaktieren Sie uns!</h3>
         <p > <%= render "contacts/form" %> </p>
@@ -205,7 +161,7 @@
 
 
 
-    </div>
+
   </div>
 
 

@@ -1,11 +1,13 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon ">
+  <div class="col-2 ">
   <%= link_to "/products", class: "navbar-brand" do %>
     <%= image_tag "logoMeinMarseille.png"%>
     <% end %>
+  </div>
 
 
 
-  <div class="navbar-categories ">
+  <div class="navbar-categories col-lg-8 ">
     <ul class="navbar-categories-list navbar-nav mr-auto" >
 
       <li classe="categories">
@@ -58,12 +60,12 @@
 
 
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <div class="socialnetworks">
+  <div class="collapse navbar-collapse col-lg-2 " id="navbarSupportedContent">
+    <div class="socialnetworks col-6">
     <div class="facebook"> <a href="https://www.facebook.com/meinmarseille/" target = "_blank"> <%= image_tag "facebook.svg"%></a></div>
     <div class="insta"> <a href="https://www.instagram.com/meinmarseille/" target = "_blank"> <%= image_tag "instagram.svg"%></a></div>
   </div>
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav mr-auto col-6">
       <% if user_signed_in? %>
 
         <li class="nav-item dropdown">
@@ -76,7 +78,7 @@
             <p> </p>
             <% else %>
             <% end %>
-            <%= link_to "Meine Buchungen", booking_by_user_path, class: "dropdown-item" %>
+            <%= link_to "Meine Buchungen", booking_by_user_path, class: "dropdown-item " %>
             <%= link_to "Mein Warenkorb", "/carts/#{session[:cart_id]} ", class: "dropdown-item" %>
             <%= link_to "Meine Infos", "pages/user", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
@@ -89,6 +91,33 @@
       <% end %>
     </ul>
   </div>
+
+
+
+
+  <li class="nav-item dropdown mobile-nav col-3">
+
+
+            <%= image_tag "icone menu.png", class: "dropdown-toggle", id: "navbarDropdown2", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+
+
+          <div class="dropdown-menu dropdown-menu-right  " aria-labelledby="navbarDropdown2">
+              <%= link_to "Preise", pages_prix_path, class: "dropdown-item " %>
+              <%= link_to "F A Q", faqs_path, class: "dropdown-item" %>
+              <%= link_to "Kontakt", pages_contact_path, class: "dropdown-item" %>
+              <%= link_to "Das Projekt", pages_projet_path, class: "dropdown-item" %>
+              <%= link_to "Das Team", pages_equipe_path, class: "dropdown-item" %>
+              <div class="dropdown-divider"></div>
+            <% if user_signed_in? %>
+              <%= link_to "Meine Buchungen", booking_by_user_path, class: "dropdown-item" %>
+              <%= link_to "Mein Warenkorb", "/carts/#{session[:cart_id]} ", class: "dropdown-item" %>
+              <%= link_to "Meine Infos", "pages/user", class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <%else%>
+              <%= link_to "Login", new_user_session_path, class: " dropdown-item" %>
+            <% end %>
+          </div>
+  </li>
 
 
 </div>

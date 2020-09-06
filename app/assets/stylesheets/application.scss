@@ -20,7 +20,7 @@
 
 .pagination a, .pagination span.current, .pagination span.gap {
     float: left;
-    padding: 0 14px;
+    padding: 0px;
     line-height: 38px;
     text-decoration: none;
     background-color: white;
@@ -49,21 +49,113 @@ li {
 
 //page swow de product
 
-.container{
-  width: 1348px;
-}
+// .container{
+//   width: 1348px;
+// }
+
+// affichage mobile
+@media only screen and (max-width:979px) {
+
+
 
 .product-card{
-  width: 1348px;
-  height: 564px;
+  width: 100%;
+  height: 300px;
+}
+#producti-image-header {
+ margin: auto;
 }
 
-.btn-header{
+
+.product-card h1 {
+  margin-top: -250px;
   margin-left: 50px;
-  width: 180px;
-  height: 50px;
-  font-size: 30px;
-  padding-top:0px;
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.bandeaupictos {
+  display: flex;
+  flex-flow: row wrap;
+  // height: 100px;
+  padding: 10px;
+  background-color: #0CD5B0;
+  margin: auto;
+
+}
+
+.bandeaupictos div {
+  margin: auto;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+
+}
+
+.Tips {
+    display: none;
+}
+
+.Tips img {
+  display: none;
+
+}
+
+.Tips h3 {
+ display: none;
+}
+
+.suggtitle h3 {
+  display: none;
+}
+
+
+.suggline {
+  display: none;
+}
+
+
+.pricegrid {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.pricegrid h3 {
+  margin-bottom: 20px;
+}
+
+.case {
+  //box-shadow: 0 0 15px rgba(0,0,0,0.2)
+  border-top: 1px solid black;
+
+}
+
+
+
+.Practish {
+  overflow: hidden;
+  line-height: 1.3em;
+  margin-bottom: 40px;
+  margin-top: 40px;
+
+}
+
+
+}
+
+// affichage destop et tablette
+@media screen and (min-width:979px) {
+
+.product-card{
+  width: 100%;
+  height: 564px;
+
+}
+
+#producti-image-header {
+ margin: auto;
 }
 
 
@@ -74,6 +166,93 @@ li {
   font-size: 100px;
   font-weight: bold;
 }
+
+.bandeaupictos {
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  padding: 10px;
+  background-color: #0CD5B0;
+  margin: auto;
+}
+
+.bandeaupictos div {
+  margin: auto;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+// en fait tips, c'est la suggestion
+.Tips {
+    height: 260px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.Tips img {
+  width: 100%;
+  height: 100%;
+
+}
+
+.Tips h3 {
+  position: absolute;
+  z-index: 2;
+  margin-left: 70px;
+  margin-top: 30px;
+  color: white;
+  font-size: 4em;
+}
+
+.suggtitle {
+  text-align:center;
+  margin-top: 50px;
+}
+
+.suggline {
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
+}
+
+.pricegrid {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.pricegrid h3 {
+  margin-bottom: 20px;
+}
+
+.case {
+  //box-shadow: 0 0 15px rgba(0,0,0,0.2)
+  border-top: 1px solid black;
+}
+
+.Practish {
+  height: 260px;
+  overflow: hidden;
+  line-height: 1.5em;
+  margin-bottom: 40px;
+  margin-top: 40px;
+
+}
+
+}
+
+
+// tout affichage
+.btn-header{
+  margin-left: 50px;
+  width: 180px;
+  height: 50px;
+  font-size: 30px;
+  padding-top:0px;
+}
+
+
+
 
 
 .bloc-photo {
@@ -105,7 +284,7 @@ li {
 text-align: justify;
 // padding-top: 20px;
 
-height: 980px;
+// height: 980px;
 }
 
 .description h2 {
@@ -135,58 +314,18 @@ padding-bottom: 20px;
 // }
 
 .bloc-picto-2 img {
-  height: 30px;
+  // height: 30px;
 }
 
 .bloc-picto-2 h3 {
   text-align: center;
 }
 
-.bandeaupictos {
-  display: flex;
-  flex-direction: row;
-  height: 50px;
-  padding: 10px;
-  background-color: #0CD5B0;
-}
 
-.bandeaupictos div {
-  margin: auto;
-  color: white;
-  font-size: 1.2em;
-  font-weight: bold;
-}
 
-.Practish {
-  height: 260px;
-  overflow: hidden;
-  line-height: 1.5em;
-  margin-bottom: 40px;
-  margin-top: 40px;
-  // en attente : border: 2px solid #15f2c9;
 
-}
 
-.Tips {
-    height: 260px;
-    margin-bottom: 30px;
-    margin-top: 30px;
-}
 
-.Tips img {
-  width: 100%;
-  height: 100%;
-
-}
-
-.Tips h3 {
-  position: absolute;
-  z-index: 2;
-  margin-left: 70px;
-  margin-top: 30px;
-  color: white;
-  font-size: 4em;
-}
 
 
 #btn2 {
@@ -195,23 +334,16 @@ padding-bottom: 20px;
 
 }
 
-.suggtitle {
-  text-align:center;
-  margin-top: 50px;
-}
 
-.suggline {
-  border-bottom: 1px solid black;
-  margin-bottom: 10px;
-}
 
 .row {
   width:100%;
   margin: 0px;
+  padding: 0px;
 }
 
 .yield {
-  margin-top: 150px;
+  margin-top: 100px;
 }
 
 .pictos{
@@ -222,30 +354,14 @@ padding-bottom: 20px;
   margin-top: 50px;
   margin-bottom: 50px;
 }
-// pour la grille de prix de la show de product//
 
-.pricegrid {
-  text-align: center;
-  margin-bottom: 20px;
-  margin-top: 40px;
-}
-
-.pricegrid h3 {
-  margin-bottom: 20px;
-}
-
-.case {
-  //box-shadow: 0 0 15px rgba(0,0,0,0.2)
-  border-top: 1px solid black;
-
-}
 
 // galerie photo
 
 .fotogalerie {
 
   display: flex;
-  margin: auto;
+  // margin: auto;
 }
 
 .fotoelement {
@@ -261,12 +377,12 @@ padding-bottom: 20px;
 }
 
 .fotoelement img {
-  width:300px;
+  // width:300px;
   height:250px;
 }
 
 .barreseparation {
-  width: 100%;
+  // width: 100%;
   border-bottom: 1px solid black;
   padding-top: 20px;
   margin-bottom: 30px;
