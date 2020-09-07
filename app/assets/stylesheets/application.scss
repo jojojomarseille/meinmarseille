@@ -477,6 +477,79 @@ padding-bottom: 20px;
   margin-bottom: 30px;
 }
 
+// smartphone
+@media only screen and (max-width:979px) {
+ .bookingpic{
+  display: none;
+ }
+
+.statusaccepted {
+ background-color: #15F2C9;
+ color: white;
+ height:100%;
+ font-weight: bold;
+  font-size: 15px;
+  text-align: center;
+}
+
+.statusrefused {
+background-color: #e24646;
+ color: white;
+ height:100%;
+ font-weight: bold;
+  font-size: 15px;
+  text-align: center;
+}
+
+.statuswait {
+ background-color: #a8c6ed;
+ color: white;
+ height:100%;
+ font-weight: bold;
+  font-size: 15px;
+  text-align: center;
+}
+
+}
+
+
+//pc et tablette
+@media screen and (min-width:979px) {
+.bookingpic {
+  padding: 0px;
+  height: 100%;
+}
+
+.statusaccepted {
+ background-color: #15F2C9;
+ color: white;
+ height:100%;
+ font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}
+
+.statusrefused {
+background-color: #e24646;
+ color: white;
+ height:100%;
+ font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}
+
+.statuswait {
+ background-color: #a8c6ed;
+ color: white;
+ height:100%;
+ font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}
+
+
+}
+
 .card-product {
   overflow: hidden;
   height: 250px;
@@ -572,32 +645,7 @@ padding-bottom: 20px;
 
 }
 
-.statusaccepted {
- background-color: #15F2C9;
- color: white;
- height:100%;
- font-weight: bold;
-  font-size: 20px;
-  text-align: center;
-}
 
-.statusrefused {
-background-color: #e24646;
- color: white;
- height:100%;
- font-weight: bold;
-  font-size: 20px;
-  text-align: center;
-}
-
-.statuswait {
- background-color: #a8c6ed;
- color: white;
- height:100%;
- font-weight: bold;
-  font-size: 20px;
-  text-align: center;
-}
 
 #booking_index-line {
   border-bottom: 1px solid black;
@@ -622,17 +670,46 @@ background-color: #e24646;
 
 //page prix
 
+//affichage mobile
+@media only screen and (max-width:979px) {
+
 .prixtop {
 
   width:100%;
-  height: 490px;
-  margin-bottom: 50px;
+  padding: 0px;
 
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.prixtop h1{
+
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.pricetable {
+font-size: 14px;
 }
 
 .prixtop img {
-  width: 100%;
-  height: 100%;
+  display: none;
+}
+
+}
+
+
+// affichage destop et tablette
+@media screen and (min-width:979px) {
+
+.prixtop {
+
+  width:100%;
+  padding: 0px;
+  height: 400px;
+  margin: auto;
+  margin-bottom: 50px;
 }
 
 .prixtop h1{
@@ -644,20 +721,28 @@ background-color: #e24646;
 }
 
 .pricetable {
-
- margin: auto;
-}
-
-.pricetable {
 font-size: 20px;
-margin-bottom: 50px;
 }
+
+.prixtop img {
+  width: 100%;
+  height: 100%;
+}
+
+}
+
+// tous affichages
+
+
+
 
 .case2 {
   border-bottom: 1px solid black;
-  text-align: center;
-  width:370px;
+  width: 360px;
 }
+
+
+
 
 .casetitle {
   text-align: left;
@@ -665,12 +750,37 @@ margin-bottom: 50px;
 
 // page projet
 
+// affichage mobile
+@media only screen and (max-width:979px) {
+
+
 .projettop {
-  width:60%;
+
+  margin: auto;
+
+  margin-bottom: 50px;
+}
+
+.projettop img {
+  display: none;
+}
+
+.projettop h1{
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+
+}
+}
+
+// affichage destop et tablette
+@media screen and (min-width:979px) {
+
+.projettop {
+  width:100%;
   margin: auto;
   height: 490px;
   margin-bottom: 50px;
-
 }
 
 .projettop img {
@@ -686,18 +796,43 @@ margin-bottom: 50px;
   color: white;
 }
 
+  }
+
 .texteprojet {
- width: 60%;
  margin: auto;
  text-align: justify;
-
-margin-bottom: 50px;
+ margin-bottom: 50px;
 }
 
 //page equipe
 
+// affichage mobile
+@media only screen and (max-width:979px) {
+
 .equipetop {
-  width:60%;
+  margin: auto;
+  margin-bottom: 50px;
+
+}
+
+.equipetop img {
+  display: none;
+}
+
+.equipetop h1{
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+
+}
+
+
+}
+
+// affichage destop et tablette
+@media screen and (min-width:979px) {
+
+.equipetop {
   margin: auto;
   height: 490px;
   margin-bottom: 50px;
@@ -717,8 +852,13 @@ margin-bottom: 50px;
   color: white;
 }
 
+}
+
+
+
+
 .corpequipe {
- width: 60%;
+ // width: 60%;
  margin: auto;
  margin-bottom: 15px;
  box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -727,20 +867,47 @@ margin-bottom: 50px;
 
 .corpequipe1 {
   margin-top: 20px;
-}sss
+}
 
-.corpequipe1 img {
+.phototeam1  {
   height: 250px;
-  width: 210px;
+  padding: 0px;
 
 }
-.corpequipe2 img {
-  height: 250px;
-  width: 210px;
 
+.phototeam1 img {
+  width:100%;
+  height: 100%;
 }
+
+
 
 //page contact
+
+
+// affichage mobile
+@media only screen and (max-width:979px) {
+.contacttop {
+  margin: auto;
+}
+
+
+.contacttop img {
+  display: none;
+}
+
+.contacttop h1{
+
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+
+}
+
+}
+
+// affichage destop et tablette
+@media screen and (min-width:979px) {
 
 .contacttop {
   margin: auto;
@@ -761,11 +928,40 @@ margin-bottom: 50px;
   font-weight: bold;
   color: white;
 }
+}
+
+
+
+
 
 //page FAQ
+
+@media only screen and (max-width:979px) {
+
+.faqtop {
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+
+.faqtop img {
+  display: none;
+}
+
+.faqtop h1{
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+}
+
+// affichage destop et tablette
+@media screen and (min-width:979px) {
+
 .faqtop {
 
-  width:60%;
+  width: 60%;
   margin: auto;
   height: 490px;
   margin-bottom: 50px;
@@ -785,6 +981,11 @@ margin-bottom: 50px;
   font-weight: bold;
   color: white;
 }
+}
+
+
+
+
 
 .questioncard{
 
@@ -813,8 +1014,9 @@ margin-bottom: 50px;
 //CGU
 
 .cgucorp {
-  width: 60%;
   margin: auto;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .cgucorp h1 {

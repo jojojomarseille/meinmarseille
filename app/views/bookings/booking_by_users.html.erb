@@ -8,7 +8,10 @@
     <% @booking_by_user.each do |booking| %>
 
       <div class="card-product">
-                         <%= cl_image_tag booking.product.photo %>
+
+                        <div class="bookingpic">
+                        <%= cl_image_tag booking.product.photo %>
+                        </div>
 
                         <div class="card-space1">
 
@@ -26,10 +29,9 @@
                                 <% else %>
                                   <div class="bookingcardstatus statuswait">status: en attente</div>
                                 <%end %>
-
-                            <!-- </div> -->
-
                           </div>
+
+
                           <div class="raw rawcs2">
                             <div class="bookingcardinfo1">
                               <p>Date: <%= booking.date %> </p>
