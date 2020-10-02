@@ -954,6 +954,14 @@ font-size: 20px;
   font-weight: bold;
 }
 
+.questioncard{
+
+  width: 90%;
+  margin: auto;
+  margin-bottom: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
 }
 
 // affichage destop et tablette
@@ -981,11 +989,6 @@ font-size: 20px;
   font-weight: bold;
   color: white;
 }
-}
-
-
-
-
 
 .questioncard{
 
@@ -995,6 +998,14 @@ font-size: 20px;
   margin-bottom: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
+
+}
+
+
+
+
+
+
 
 
 .card-body-faq {
