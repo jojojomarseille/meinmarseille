@@ -250,7 +250,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    redcarpet (3.5.0)
+    redcarpet (3.5.1)
     redis (4.1.4)
     responders (3.0.1)
       actionpack (>= 5.0)
@@ -341,7 +341,7 @@ DEPENDENCIES
   pry-rails
   puma
   rails (= 6.0.0)
-  redcarpet (~> 3.4)
+  redcarpet (~> 3.5)
   redis
   rouge (~> 3.3)
   sassc-rails
