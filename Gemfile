@@ -25,7 +25,7 @@ gem 'stripe_event'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'mail_form'
 gem 'jquery-rails', '~> 4.1', '>= 4.1.1'
-gem 'redcarpet', '~> 3.4'
+gem 'redcarpet', '~> 3.5'
 gem 'rouge', '~> 3.3'
 
 
